@@ -1,4 +1,4 @@
-package shell;
+package server;
 
 import java.util.ResourceBundle;
 import java.util.Scanner;
