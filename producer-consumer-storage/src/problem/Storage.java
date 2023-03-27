@@ -53,7 +53,7 @@ public class Storage<T> {
 		}
 	}
 	
-	public void notifyAllIsNoLongerFull() {
+	public void notifyNotFull() {
 		synchronized (FULL_LOCK) {
 			if (debug) {
 				System.out.println(Thread.currentThread().getName() + " notifies queue is not full.");
@@ -62,7 +62,7 @@ public class Storage<T> {
 		}
 	}
 	
-	public void notifyAllIsNoLongerEmpty() {
+	public void notifyNotEmpty() {
 		synchronized (EMPTY_LOCK) {
 			if (debug) {
 				System.out.println(Thread.currentThread().getName() + " notifies queue is not empty.");
@@ -86,10 +86,10 @@ public class Storage<T> {
 	public void stop( ) {
 		running = false;
 		if (isEmpty()) {
-			notifyAllIsNoLongerFull();
+			notifyNotFull();
 		}
 		if (isFull()) {
-			notifyAllIsNoLongerEmpty();
+			notifyNotEmpty();
 		}
 	}
 }

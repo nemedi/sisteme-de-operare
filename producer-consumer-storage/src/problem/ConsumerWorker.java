@@ -27,7 +27,7 @@ public class ConsumerWorker<T> implements Runnable {
 				if (debug) {
 					System.out.println(Thread.currentThread().getName() + " consumed " + data);
 				}
-				storage.notifyAllIsNoLongerFull();
+				storage.notifyNotFull();
 				consumer.accept(data);
 			} catch (InterruptedException e) {
 				if (debug) {

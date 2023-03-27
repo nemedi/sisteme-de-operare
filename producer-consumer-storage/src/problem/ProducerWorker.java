@@ -28,7 +28,7 @@ public class ProducerWorker<T> implements Runnable {
 				if (debug) {
 					System.out.println(Thread.currentThread().getName() + " produced " + data);
 				}
-				storage.notifyAllIsNoLongerEmpty();
+				storage.notifyNotEmpty();
 			} catch (InterruptedException e) {
 				if (debug) {
 					e.printStackTrace();
