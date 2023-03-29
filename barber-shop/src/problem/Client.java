@@ -28,18 +28,18 @@ public class Client implements Runnable {
 			try {
 				Thread.sleep(500);
 				mutex.acquire();
-				System.out.println("Client " + (id + 1) + " is searching for a free chiar.");
+				System.out.println("Client " + id + " is searching for a free chiar.");
 				if (freeChairs.getCount() > 0) {
 				    freeChairs.decrement();
-				    System.out.println("Client " + (id + 1) + " found a free chair.");
+				    System.out.println("Client " + id + " found a free chair.");
 				    clients.release();
 				    mutex.release();
 				    barberReady.acquire();
-				    System.out.println("Client " + (id + 1) + " awaits to get a haircut.");
+				    System.out.println("Client " + id + " awaits to get a haircut.");
 				} else {
 					System.out.println("There are no free chairs.");
 				    mutex.release();
-				    System.out.println("Client " + (id + 1) + " leaves without getting a haircut.");
+				    System.out.println("Client " + id + " leaves without getting a haircut.");
 				}
 			} catch (InterruptedException e) {
 				break;

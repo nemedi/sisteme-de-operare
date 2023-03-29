@@ -13,7 +13,7 @@ public class Program {
 		Thread barber = new Thread(new Barber(freeChairs, clients, barberReady, mutex));
 		barber.start();
 		for (int i = 0; i < n; i++) {
-			Thread client = new Thread(new Client(i, freeChairs, clients, barberReady, mutex));
+			Thread client = new Thread(new Client(i + 1, freeChairs, clients, barberReady, mutex));
 			client.start();
 		}
 	}
