@@ -26,22 +26,19 @@ public class Philosopher implements Runnable {
 				eat();
 				rightFork.release();
 				leftFork.release();
+				Thread.sleep(1000);
 			} catch (InterruptedException e) {
 				break;
 			}
 		}
 	}
 	
-	private void eat() throws InterruptedException {
-		System.out.println("Philosopher "
-				+ (id + 1) + " is eating.");
-		Thread.sleep(500);
+	private void eat() {
+		System.out.println("Philosopher " + id + " is eating.");
 	}
 	
-	private void think() throws InterruptedException {
-		System.out.println("Philosopher "
-				+ (id + 1) + " is thinking.");
-		Thread.sleep(500);
+	private void think() {
+		System.out.println("Philosopher " + id + " is thinking.");
 	}
 
 }
