@@ -4,33 +4,28 @@ import java.util.concurrent.Semaphore;
 
 public class Philosopher implements Runnable {
 	
-	private Semaphore[] locks;
+	private Semaphore leftFork;
+	private Semaphore rightFork;
 	private int id;
 	
-	public Philosopher(int id, Semaphore[] locks) {
+	public Philosopher(int id,
+			Semaphore leftFork,
+			Semaphore rightFork) {
 		this.id = id;
-		this.locks = locks;
+		this.leftFork = leftFork;
+		this.rightFork = rightFork;
 	}
 
 	@Override
 	public void run() {
 		while (true) {
 			try {
-				if (id < locks.length - 1) {
-					locks[id].acquire();
-					locks[id + 1].acquire();
-					eat();
-					locks[id + 1].release();
-					locks[id].release();
-					think();
-				} else {
-					locks[locks.length - 1].acquire();
-					locks[0].acquire();
-					eat();
-					locks[0].acquire();
-					locks[locks.length - 1].acquire();
-					think();
-				}
+				think();
+				leftFork.acquire();
+				rightFork.acquire();
+				eat();
+				rightFork.release();
+				leftFork.release();
 			} catch (InterruptedException e) {
 				break;
 			}
@@ -38,19 +33,15 @@ public class Philosopher implements Runnable {
 	}
 	
 	private void eat() throws InterruptedException {
-		synchronized (System.out) {
-			System.out.print("Philosopher " + (id + 1) + " is eating...");
-			Thread.sleep(500);
-			System.out.println("done.");
-		}
+		System.out.println("Philosopher "
+				+ (id + 1) + " is eating.");
+		Thread.sleep(500);
 	}
 	
 	private void think() throws InterruptedException {
-		synchronized (System.out) {
-			System.out.print("Philosopher " + (id + 1) + " is thinking...");
-			Thread.sleep(500);
-			System.out.println("done.");
-		}
+		System.out.println("Philosopher "
+				+ (id + 1) + " is thinking.");
+		Thread.sleep(500);
 	}
 
 }

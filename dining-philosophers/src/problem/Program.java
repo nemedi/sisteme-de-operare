@@ -5,13 +5,16 @@ import java.util.concurrent.Semaphore;
 public class Program {
 
 	public static void main(String[] args) {
-		Thread[] threads = new Thread[Runtime.getRuntime().availableProcessors()];
-		Semaphore[] semaphores = new Semaphore[threads.length];
-		for (int i = 0; i < semaphores.length; i++) {
-			semaphores[i] = new Semaphore(1);
+		final int n = Runtime.getRuntime().availableProcessors();
+		Thread[] threads = new Thread[n];
+		Semaphore[] forks = new Semaphore[n];
+		for (int i = 0; i < forks.length; i++) {
+			forks[i] = new Semaphore(1);
 		}
 		for (int i = 0; i < threads.length; i++) {
-			threads[i] = new Thread(new Philosopher(i, semaphores));
+			var philosopher = new Philosopher(i + 1, forks[i],
+					forks[(i + 1) % forks.length]);
+			threads[i] = new Thread(philosopher);
 			threads[i].start();
 		}
 	}
