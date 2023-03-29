@@ -1,22 +1,24 @@
 package problem;
 
-import java.util.Queue;
 import java.util.Random;
 import java.util.concurrent.Semaphore;
 
 public class Producer implements Runnable {
-	
-	private Queue<Integer> buffer;
-	private Semaphore empty;
-	private Semaphore full;
-	private Semaphore mutex;
+
+	private Buffer buffer;
+	private Semaphore putLock;
+	private Semaphore takeLock;
+	private Semaphore bufferLock;
 	private Random random;
 
-	public Producer(Queue<Integer> buffer, Semaphore empty, Semaphore full, Semaphore mutex) {
+	public Producer(Buffer buffer,
+			Semaphore putLock,
+			Semaphore takeLock,
+			Semaphore bufferLock) {
 		this.buffer = buffer;
-		this.empty = empty;
-		this.full = full;
-		this.mutex = mutex;
+		this.putLock = putLock;
+		this.takeLock = takeLock;
+		this.bufferLock = bufferLock;
 		this.random = new Random();
 	}
 
@@ -25,23 +27,23 @@ public class Producer implements Runnable {
 		
 		while (true) {
 			try {
-				int value = produce();
-				empty.acquire();
-				mutex.acquire();
-				buffer.add(value);
-				mutex.release();
-				full.release();
+				int item = produce();
+				putLock.acquire();
+				bufferLock.acquire();
+				buffer.put(item);
+				bufferLock.release();
+				if (buffer.isFull()) {
+					takeLock.release(buffer.getSize());
+				}
+				Thread.sleep(1000);
 			} catch (InterruptedException e) {
 				break;
 			}
 		}
 	}
 	
-	private int produce() throws InterruptedException {
-		Thread.sleep(500);
-		int value = random.nextInt(100);
-		System.out.println("Producer produced " + value);
-		return value;
+	private int produce() {
+		return random.nextInt(100) + 1;
 	}
 
 }

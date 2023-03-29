@@ -1,22 +1,21 @@
 package problem;
 
-import java.util.LinkedList;
-import java.util.Queue;
 import java.util.concurrent.Semaphore;
 
 public class Program {
 
 	public static void main(String[] args) {
-		Queue<Integer> buffer = new LinkedList<Integer>();
-		int capacity = 10;
-		Semaphore empty = new Semaphore(capacity);
-		Semaphore full = new Semaphore(0);
-		Semaphore mutex = new Semaphore(1);
-		Thread producer = new Thread(new Producer(buffer, empty, full, mutex));
-		Thread consumer = new Thread(new Consumer(buffer, empty, full, mutex));
-		producer.start();
-		consumer.start();
+		int size = 3;
+		Buffer buffer = new Buffer(size);
+		Semaphore putLock = new Semaphore(size);
+		Semaphore takeLock = new Semaphore(0);
+		Semaphore bufferLock = new Semaphore(1);
+		Producer producer = new Producer(buffer, putLock, takeLock, bufferLock);
+		Consumer consumer = new Consumer(buffer, putLock, takeLock, bufferLock);
+		new Thread(producer).start();
+		new Thread(consumer).start();
 		while (true) {
-		}
+		}		
 	}
+
 }

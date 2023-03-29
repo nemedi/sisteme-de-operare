@@ -1,42 +1,44 @@
 package problem;
 
-import java.util.Queue;
 import java.util.concurrent.Semaphore;
 
 public class Consumer implements Runnable {
 	
-	private Queue<Integer> buffer;
-	private Semaphore empty;
-	private Semaphore full;
-	private Semaphore mutex;
+	private Buffer buffer;
+	private Semaphore putLock;
+	private Semaphore takeLock;
+	private Semaphore bufferLock;
 
-	public Consumer(Queue<Integer> buffer, Semaphore empty, Semaphore full, Semaphore mutex) {
+	public Consumer(Buffer buffer,
+			Semaphore full,
+			Semaphore empty,
+			Semaphore mutex) {
 		this.buffer = buffer;
-		this.empty = empty;
-		this.full = full;
-		this.mutex = mutex;
+		this.putLock = full;
+		this.takeLock = empty;
+		this.bufferLock = mutex;
 	}
 
 	@Override
 	public void run() {
 		while (true) {
 			try {
-				full.acquire();
-				mutex.acquire();
-				int value = buffer.poll();
-				consume(value);
-				mutex.release();
-				empty.release();
-				
+				takeLock.acquire();
+				bufferLock.acquire();
+				int item = buffer.take();
+				bufferLock.release();
+				if (buffer.isEmpty()) { 
+					putLock.release(buffer.getSize());
+				}
+				consume(item);
+				Thread.sleep(1000);
 			} catch (InterruptedException e) {
 				break;
 			}
 		}
 	}
 	
-	private void consume(int value) throws InterruptedException {
-		System.out.println("Consumer consumed " + value);
-		Thread.sleep(500);
+	private void consume(int item) {
 	}
 
 }
