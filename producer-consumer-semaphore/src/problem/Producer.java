@@ -31,10 +31,9 @@ public class Producer implements Runnable {
 				putLock.acquire();
 				bufferLock.acquire();
 				buffer.put(item);
+				System.out.println("producer: " + item);
 				bufferLock.release();
-				if (buffer.isFull()) {
-					takeLock.release(buffer.getSize());
-				}
+				takeLock.release();
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {
 				break;

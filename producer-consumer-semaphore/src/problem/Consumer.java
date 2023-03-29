@@ -27,9 +27,8 @@ public class Consumer implements Runnable {
 				bufferLock.acquire();
 				int item = buffer.take();
 				bufferLock.release();
-				if (buffer.isEmpty()) { 
-					putLock.release(buffer.getSize());
-				}
+				putLock.release();
+				System.out.println("consumer: " + item);
 				consume(item);
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {
