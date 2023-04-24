@@ -10,11 +10,14 @@ import java.util.stream.Stream;
 public class Program {
 	
 	public static void main(String[] args) {
+		int exit = 0;
 		Commands.prompter.apply(">");
 		try (Scanner scanner = new Scanner(System.in)) {
 			while (true) {
 				if (scanner.hasNextLine()) {
-					String[] segments = scanner.nextLine().split("\\s+");
+					String line = scanner.nextLine();
+					line = line.replace("$?", Integer.toString(exit));
+					String[] segments = line.split("\\s+");
 					if ("exit".equals(segments[0])) {
 						break;
 					}
@@ -31,7 +34,7 @@ public class Program {
 									&& method.get().getParameterTypes()[0].isArray()) {
 								arguments = new Object[] {arguments};
 							}
-							method.get().invoke(null, arguments);
+							exit = (int) method.get().invoke(null, arguments);
 						} catch (Exception e) {
 							e.printStackTrace();
 						}
