@@ -15,6 +15,9 @@ do
     -g=*|--group=*)
         group=$(echo "$1" | cut -d = -f 2)
         ;;
+    -u=*|--user=*)
+        user=$(echo "$1" | cut -d = -f 2)
+        ;;
     -a=*|--administrator=*)
         administrator=$(echo "$1" | cut -d = -f 2)
         ;;
