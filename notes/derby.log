@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Mon May 08 21:31:19 EEST 2023:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585): instance a816c00e-0187-fca1-dec0-00001f65f928 
+on database directory D:\Work\ASE\SO\Workspace\notes\notesDB with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@c387f44 
+Loaded from file:/D:/Work/ASE/SO/Workspace/notes/lib/derby.jar
+java.vendor=Azul Systems, Inc.
+java.runtime.version=19.0.2+7
+user.dir=D:\Work\ASE\SO\Workspace\notes
+os.name=Windows 11
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
