@@ -1,0 +1,33 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="FileExplorer.MainWindow"
+        Title="FileExplorer">
+	<SplitView IsPaneOpen="True"
+           DisplayMode="Inline"
+           OpenPaneLength="296">
+		<SplitView.Pane>
+			<TreeView Items="{Binding Folders}"
+					  SelectionMode="Single"
+					  SelectedItem="{Binding Folder}"
+					  HorizontalAlignment="Stretch"
+					  VerticalAlignment="Stretch">
+				<TreeView.ItemTemplate>
+					<TreeDataTemplate ItemsSource="{Binding Subfolders}">
+						<TextBlock Text="{Binding Name}"/>
+					</TreeDataTemplate>
+				</TreeView.ItemTemplate>
+			</TreeView>
+		</SplitView.Pane>
+		<Grid>
+			<DataGrid Items="{Binding Files}" AutoGenerateColumns="False" >
+				<DataGrid.Columns>
+					<DataGridTextColumn Header="Name"  Binding="{Binding Name}"/>
+					<DataGridTextColumn Header="Size" Binding="{Binding Size}" />
+				</DataGrid.Columns>
+			</DataGrid>
+		</Grid>			
+	</SplitView>
+</Window>
