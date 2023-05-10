@@ -114,9 +114,9 @@ public class MainShell extends Shell {
 				return ((File) element).getName();
 			}
 		});
-		TableColumn tblclmnName = nameTableViewerColumn.getColumn();
-		tblclmnName.setWidth(275);
-		tblclmnName.setText("Name");
+		TableColumn nameTableColumn = nameTableViewerColumn.getColumn();
+		nameTableColumn.setWidth(275);
+		nameTableColumn.setText("Name");
 		
 		TableViewerColumn sizeTableViewerColumn = new TableViewerColumn(tableViewer, SWT.NONE);
 		sizeTableViewerColumn.setLabelProvider(new ColumnLabelProvider() {
@@ -125,17 +125,18 @@ public class MainShell extends Shell {
 				return String.valueOf(Math.round(((File) element).length() / 1024));
 			}
 		});
-		TableColumn tblclmnSize = sizeTableViewerColumn.getColumn();
-		tblclmnSize.setAlignment(SWT.RIGHT);
-		tblclmnSize.setWidth(100);
-		tblclmnSize.setText("Size");
+		TableColumn sizeTableColumn = sizeTableViewerColumn.getColumn();
+		sizeTableColumn.setAlignment(SWT.RIGHT);
+		sizeTableColumn.setWidth(100);
+		sizeTableColumn.setText("Size");
 		sashForm.setWeights(new int[] {1, 3});
 		
 		tree.addSelectionListener(new SelectionListener() {
 			
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				tableViewer.setInput(((File) e.item.getData()).listFiles(f -> f.isFile()));
+				File[] files = ((File) e.item.getData()).listFiles(f -> f.isFile());
+				tableViewer.setInput(files != null ? files : new File[] {});
 			}
 			
 			@Override
