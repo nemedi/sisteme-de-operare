@@ -1,33 +1,25 @@
 package client;
 
-import org.eclipse.swt.SWT;
-import org.eclipse.swt.widgets.Display;
-import org.eclipse.swt.widgets.Shell;
-import org.eclipse.swt.layout.GridLayout;
-import org.eclipse.swt.custom.SashForm;
-import org.eclipse.swt.events.SelectionEvent;
-import org.eclipse.swt.events.SelectionListener;
-import org.eclipse.swt.widgets.Tree;
-import org.eclipse.jface.viewers.TreeViewer;
-import org.eclipse.swt.widgets.Label;
-import org.eclipse.swt.widgets.Table;
+import java.io.File;
+
 import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.ColumnLabelProvider;
 import org.eclipse.jface.viewers.ITreeContentProvider;
+import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.jface.viewers.TableViewer;
-import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.layout.GridData;
-
-import java.io.File;
-import java.lang.reflect.Array;
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
-import org.eclipse.jface.layout.TableColumnLayout;
-import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.jface.viewers.TableViewerColumn;
+import org.eclipse.jface.viewers.TreeViewer;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.SashForm;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.events.SelectionListener;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.Table;
+import org.eclipse.swt.widgets.TableColumn;
+import org.eclipse.swt.widgets.Tree;
 
 public class MainShell extends Shell {
 	private Table table;
@@ -65,8 +57,47 @@ public class MainShell extends Shell {
 		sashForm.setLocation(0, 0);
 		
 		TreeViewer treeViewer = new TreeViewer(sashForm, SWT.BORDER);
-		treeViewer.setContentProvider(new TreeContentProvider());
-		treeViewer.setLabelProvider(new TreeLabelProvider());
+		treeViewer.setContentProvider(new ITreeContentProvider() {
+			
+			
+			@Override
+			public boolean hasChildren(Object item) {
+				File[] files = ((File) item)
+						.listFiles(f -> f.isDirectory());
+				return files != null && files.length > 0;
+			}
+			
+			@Override
+			public Object getParent(Object item) {
+				return ((File) item).getParentFile();
+			}
+			
+			@Override
+			public Object[] getElements(Object input) {
+				return ((File[]) input);
+			}
+			
+			@Override
+			public Object[] getChildren(Object item) {
+				File[] folders = ((File) item)
+						.listFiles(f -> f.isDirectory());
+				return folders;
+			}
+			
+		});
+		treeViewer.setLabelProvider(new LabelProvider() {
+			
+			@Override
+			public String getText(Object item) {
+				File file = (File) item;
+				if (!file.getName().isEmpty()) {
+					return file.getName();
+				} else {	
+					return file.getPath();
+				}
+			}
+			
+		});
 		treeViewer.setInput(File.listRoots());
 		Tree tree = treeViewer.getTree();
 		
