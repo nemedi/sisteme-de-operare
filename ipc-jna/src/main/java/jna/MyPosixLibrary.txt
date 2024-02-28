@@ -1,0 +1,5 @@
+//    long sem_open(String name, int flags, int shared, int capacity);
+//    void sem_close(long semaphore);
+//    int sem_wait(long semaphore);
+//    int sem_post(long semaphore);
+//    int sem_unlink(String name);
