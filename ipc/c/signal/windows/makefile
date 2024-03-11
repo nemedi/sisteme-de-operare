@@ -1,5 +1,5 @@
 sender:
-	gcc sender.c -o sender.exe -lpthread
+	gcc.exe sender.c -o sender.exe -lpthread
 receiver:
-	gcc receiver.c -o receiver.exe -lpthread
+	gcc.exe receiver.c -o receiver.exe -lpthread
 all: sender receiver

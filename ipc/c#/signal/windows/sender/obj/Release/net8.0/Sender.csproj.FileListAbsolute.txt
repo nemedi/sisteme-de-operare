@@ -1,0 +1,15 @@
+D:\Work\ASE\SO\sisteme-de-operare\ipc\c#\signal\windows\sender\bin\Release\net8.0\sender.exe
+D:\Work\ASE\SO\sisteme-de-operare\ipc\c#\signal\windows\sender\bin\Release\net8.0\sender.deps.json
+D:\Work\ASE\SO\sisteme-de-operare\ipc\c#\signal\windows\sender\bin\Release\net8.0\sender.runtimeconfig.json
+D:\Work\ASE\SO\sisteme-de-operare\ipc\c#\signal\windows\sender\bin\Release\net8.0\sender.dll
+D:\Work\ASE\SO\sisteme-de-operare\ipc\c#\signal\windows\sender\bin\Release\net8.0\sender.pdb
+D:\Work\ASE\SO\sisteme-de-operare\ipc\c#\signal\windows\sender\obj\Release\net8.0\Sender.GeneratedMSBuildEditorConfig.editorconfig
+D:\Work\ASE\SO\sisteme-de-operare\ipc\c#\signal\windows\sender\obj\Release\net8.0\Sender.AssemblyInfoInputs.cache
+D:\Work\ASE\SO\sisteme-de-operare\ipc\c#\signal\windows\sender\obj\Release\net8.0\Sender.AssemblyInfo.cs
+D:\Work\ASE\SO\sisteme-de-operare\ipc\c#\signal\windows\sender\obj\Release\net8.0\Sender.csproj.CoreCompileInputs.cache
+D:\Work\ASE\SO\sisteme-de-operare\ipc\c#\signal\windows\sender\obj\Release\net8.0\Sender.sourcelink.json
+D:\Work\ASE\SO\sisteme-de-operare\ipc\c#\signal\windows\sender\obj\Release\net8.0\sender.dll
+D:\Work\ASE\SO\sisteme-de-operare\ipc\c#\signal\windows\sender\obj\Release\net8.0\refint\sender.dll
+D:\Work\ASE\SO\sisteme-de-operare\ipc\c#\signal\windows\sender\obj\Release\net8.0\sender.pdb
+D:\Work\ASE\SO\sisteme-de-operare\ipc\c#\signal\windows\sender\obj\Release\net8.0\Sender.genruntimeconfig.cache
+D:\Work\ASE\SO\sisteme-de-operare\ipc\c#\signal\windows\sender\obj\Release\net8.0\ref\sender.dll

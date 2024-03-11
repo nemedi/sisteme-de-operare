@@ -1,35 +1,30 @@
-#include <windows.h>
 #include <stdio.h>
+#include <windows.h>
 
 int main() {
-    HANDLE hMapFile;
-    LPCTSTR pBuf;
-
-    // Create a file mapping object
-    hMapFile = CreateFileMapping(INVALID_HANDLE_VALUE, NULL, PAGE_READWRITE, 0, 256, L"MySharedMemory");
-
-    if (hMapFile == NULL) {
-        fprintf(stderr, "Could not create file mapping object (%d)\n", GetLastError());
+    HANDLE hFileMapping = CreateFileMapping(INVALID_HANDLE_VALUE, NULL, PAGE_READWRITE, 0, 256, "MySharedMemory");
+    if (hFileMapping == NULL) {
+        perror("Error creating shared memory");
         return 1;
     }
-
-    // Map the shared memory into the address space of the calling process
-    pBuf = (LPTSTR)MapViewOfFile(hMapFile, FILE_MAP_ALL_ACCESS, 0, 0, 256);
-
-    if (pBuf == NULL) {
-        fprintf(stderr, "Could not map view of file (%d)\n", GetLastError());
-        CloseHandle(hMapFile);
+    char* sharedMemory = (char*)MapViewOfFile(hFileMapping, FILE_MAP_WRITE, 0, 0, 0);
+    if (sharedMemory == NULL) {
+        perror("Error mapping view of file");
+        CloseHandle(hFileMapping);
         return 1;
     }
-
-    // Write data to shared memory
-    const char* dataToSend = "Hello, reader!";
-    sprintf((char*)pBuf, "%s", dataToSend);
-    printf("Data sent to reader: %s\n", dataToSend);
-
-    // Unmap the shared memory
-    UnmapViewOfFile(pBuf);
-    CloseHandle(hMapFile);
-
+    while (1) {
+        printf("Enter a message (type 'quit' to exit): ");
+        fgets(sharedMemory, 256, stdin);
+        size_t len = strlen(sharedMemory);
+        if (len > 0 && sharedMemory[len - 1] == '\n') {
+            sharedMemory[len - 1] = '\0';
+        }
+        if (strcmp(sharedMemory, "quit") == 0) {
+            break;
+        }
+    }
+    UnmapViewOfFile(sharedMemory);
+    CloseHandle(hFileMapping);
     return 0;
 }

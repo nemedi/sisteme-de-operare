@@ -5,7 +5,7 @@
 
 int main() {
     HANDLE semaphore;
-    semaphore = CreateSemaphore(NULL, 0, 1, NULL);
+    semaphore = CreateSemaphore(NULL, 1, 1, "MyNamedSemaphore");
     if (semaphore == NULL) {
         fprintf(stderr, "Semaphore creation failed (%d)\n", GetLastError());
         return 1;

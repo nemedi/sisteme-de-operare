@@ -1,0 +1,15 @@
+D:\Work\ASE\SO\sisteme-de-operare\ipc\c#\signal\windows\receiver\bin\Release\net8.0\receiver.exe
+D:\Work\ASE\SO\sisteme-de-operare\ipc\c#\signal\windows\receiver\bin\Release\net8.0\receiver.deps.json
+D:\Work\ASE\SO\sisteme-de-operare\ipc\c#\signal\windows\receiver\bin\Release\net8.0\receiver.runtimeconfig.json
+D:\Work\ASE\SO\sisteme-de-operare\ipc\c#\signal\windows\receiver\bin\Release\net8.0\receiver.dll
+D:\Work\ASE\SO\sisteme-de-operare\ipc\c#\signal\windows\receiver\bin\Release\net8.0\receiver.pdb
+D:\Work\ASE\SO\sisteme-de-operare\ipc\c#\signal\windows\receiver\obj\Release\net8.0\Receiver.GeneratedMSBuildEditorConfig.editorconfig
+D:\Work\ASE\SO\sisteme-de-operare\ipc\c#\signal\windows\receiver\obj\Release\net8.0\Receiver.AssemblyInfoInputs.cache
+D:\Work\ASE\SO\sisteme-de-operare\ipc\c#\signal\windows\receiver\obj\Release\net8.0\Receiver.AssemblyInfo.cs
+D:\Work\ASE\SO\sisteme-de-operare\ipc\c#\signal\windows\receiver\obj\Release\net8.0\Receiver.csproj.CoreCompileInputs.cache
+D:\Work\ASE\SO\sisteme-de-operare\ipc\c#\signal\windows\receiver\obj\Release\net8.0\Receiver.sourcelink.json
+D:\Work\ASE\SO\sisteme-de-operare\ipc\c#\signal\windows\receiver\obj\Release\net8.0\receiver.dll
+D:\Work\ASE\SO\sisteme-de-operare\ipc\c#\signal\windows\receiver\obj\Release\net8.0\refint\receiver.dll
+D:\Work\ASE\SO\sisteme-de-operare\ipc\c#\signal\windows\receiver\obj\Release\net8.0\receiver.pdb
+D:\Work\ASE\SO\sisteme-de-operare\ipc\c#\signal\windows\receiver\obj\Release\net8.0\Receiver.genruntimeconfig.cache
+D:\Work\ASE\SO\sisteme-de-operare\ipc\c#\signal\windows\receiver\obj\Release\net8.0\ref\receiver.dll
