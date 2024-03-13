@@ -1,1 +1,0 @@
-java -cp "..\lib\jna.jar;..\lib\jna-platform.jar;..\bin" Receiver
