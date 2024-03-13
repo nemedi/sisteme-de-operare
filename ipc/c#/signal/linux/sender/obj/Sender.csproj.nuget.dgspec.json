@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "d:\\Work\\ASE\\SO\\sisteme-de-operare\\ipc\\c#\\signal\\linux\\sender\\Sender.csproj": {}
+    "D:\\Work\\ASE\\SO\\sisteme-de-operare\\ipc\\c#\\signal\\linux\\sender\\Sender.csproj": {}
   },
   "projects": {
-    "d:\\Work\\ASE\\SO\\sisteme-de-operare\\ipc\\c#\\signal\\linux\\sender\\Sender.csproj": {
+    "D:\\Work\\ASE\\SO\\sisteme-de-operare\\ipc\\c#\\signal\\linux\\sender\\Sender.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\Work\\ASE\\SO\\sisteme-de-operare\\ipc\\c#\\signal\\linux\\sender\\Sender.csproj",
+        "projectUniqueName": "D:\\Work\\ASE\\SO\\sisteme-de-operare\\ipc\\c#\\signal\\linux\\sender\\Sender.csproj",
         "projectName": "sender",
-        "projectPath": "d:\\Work\\ASE\\SO\\sisteme-de-operare\\ipc\\c#\\signal\\linux\\sender\\Sender.csproj",
+        "projectPath": "D:\\Work\\ASE\\SO\\sisteme-de-operare\\ipc\\c#\\signal\\linux\\sender\\Sender.csproj",
         "packagesPath": "C:\\Users\\iilie\\.nuget\\packages\\",
-        "outputPath": "d:\\Work\\ASE\\SO\\sisteme-de-operare\\ipc\\c#\\signal\\linux\\sender\\obj\\",
+        "outputPath": "D:\\Work\\ASE\\SO\\sisteme-de-operare\\ipc\\c#\\signal\\linux\\sender\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

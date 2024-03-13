@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GX641QHxzRccrOVoTd+b7UB9cdfXH+KWPt6v2I4hK/SkqcgvNGT0v2GfLNWO7W+BnfinJcPP5h/0BsS6v0FHig==",
+  "dgSpecHash": "+OiC57WUh1++sjJi1IhxoHVU6dhjTVbWqGcQVF1MKsxd32/cI3Py2atHXdDMpOsGRRA4WFQEh08tLoj/5VHRRw==",
   "success": true,
-  "projectFilePath": "d:\\Work\\ASE\\SO\\sisteme-de-operare\\ipc\\c#\\signal\\linux\\sender\\Sender.csproj",
+  "projectFilePath": "D:\\Work\\ASE\\SO\\sisteme-de-operare\\ipc\\c#\\signal\\linux\\sender\\Sender.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

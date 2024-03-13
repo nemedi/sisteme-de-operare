@@ -21,9 +21,12 @@ int main() {
         perror("Error mapping shared memory");
         exit(EXIT_FAILURE);
     }
-    printf("Reading from shared memory (type 'exit' to quit):\n");
+    printf("Reading from shared memory:\n");
     while (1) {
         printf("Received: %s\n", shared_memory);
+        if (strcmp(shared_memory, "quit") == 0) {
+            break;
+        }
         sleep(1);
     }
     munmap(shared_memory, size);

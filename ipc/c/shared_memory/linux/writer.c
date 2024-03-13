@@ -25,12 +25,12 @@ int main() {
         perror("Error mapping shared memory");
         exit(EXIT_FAILURE);
     }
-    printf("Enter text to write to shared memory (type 'exit' to quit):\n");
+    printf("Enter text to write to shared memory (type 'quit' to exit):\n");
     while (1) {
         char input[256];
         fgets(input, sizeof(input), stdin);
         input[strcspn(input, "\n")] = '\0';
-        if (strcmp(input, "exit") == 0) {
+        if (strcmp(input, "quit") == 0) {
             break;
         }
         snprintf(shared_memory, size, "%s", input);
