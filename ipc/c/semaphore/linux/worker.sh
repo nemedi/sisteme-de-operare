@@ -1,10 +1,10 @@
 #!/bin/bash
 if test "$#" -eq  1
 then
-    if ./create_semaphore "$1" 1 > /dev/null
+    if ./create_semaphore "$1" 1 &> /dev/null
     then
         echo -n "Trying to acquire semaphore $1..."
-        if ./wait_semaphore "$1" > /dev/null
+        if ./wait_semaphore "$1" &> /dev/null
         then
             echo "done."
             echo "Type any command and I'll do it, or 'quit' to stop me from work."
@@ -20,7 +20,7 @@ then
                 fi
             done
             echo -n "Trying to release semaphore $1..."
-            if ./post_semaphore "$1" > /dev/null
+            if ./post_semaphore "$1" &> /dev/null
             then
                 echo "done."
             else
@@ -28,7 +28,7 @@ then
                 exit 4
             fi
             echo -n "Trying to remove semaphore $1..."
-            if ./unlink_semaphore "$1" > /dev/null
+            if ./unlink_semaphore "$1" &> /dev/null
             then
                 echo "done."
                 exit 0

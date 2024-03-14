@@ -1,0 +1,1 @@
+java -cp ./bin Sender $1 2

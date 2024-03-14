@@ -1,0 +1,1 @@
+javac -cp "./lib/jna.jar;./bin" ./src/*.java -d ./bin
