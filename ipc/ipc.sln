@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "c#", "c#", "{120BCEE1-884B-450D-90A4-B823080E4F07}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "signal", "signal", "{948B10AE-588B-40CE-8355-3040F21B2FA7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "linux", "linux", "{232CA6D7-B6E0-485F-9AA3-8ACDC8F3D4CF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Receiver", "c#\signal\linux\receiver\Receiver.csproj", "{32BA22C7-54EF-4FC5-9091-786237015963}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sender", "c#\signal\linux\sender\Sender.csproj", "{E8F8DB3D-11B7-44CC-8EE5-287099455138}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "windows", "windows", "{46B9ECC6-316A-4682-91A8-45926F31CBFC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Receiver", "c#\signal\windows\receiver\Receiver.csproj", "{3391C1F4-FCB8-4940-8C7D-0343775F4094}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sender", "c#\signal\windows\sender\Sender.csproj", "{3BF15122-66B2-4DB4-9D02-FBC55DF695BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{32BA22C7-54EF-4FC5-9091-786237015963}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32BA22C7-54EF-4FC5-9091-786237015963}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32BA22C7-54EF-4FC5-9091-786237015963}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32BA22C7-54EF-4FC5-9091-786237015963}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8F8DB3D-11B7-44CC-8EE5-287099455138}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8F8DB3D-11B7-44CC-8EE5-287099455138}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8F8DB3D-11B7-44CC-8EE5-287099455138}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8F8DB3D-11B7-44CC-8EE5-287099455138}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3391C1F4-FCB8-4940-8C7D-0343775F4094}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3391C1F4-FCB8-4940-8C7D-0343775F4094}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3391C1F4-FCB8-4940-8C7D-0343775F4094}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3391C1F4-FCB8-4940-8C7D-0343775F4094}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BF15122-66B2-4DB4-9D02-FBC55DF695BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BF15122-66B2-4DB4-9D02-FBC55DF695BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BF15122-66B2-4DB4-9D02-FBC55DF695BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BF15122-66B2-4DB4-9D02-FBC55DF695BC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{948B10AE-588B-40CE-8355-3040F21B2FA7} = {120BCEE1-884B-450D-90A4-B823080E4F07}
+		{232CA6D7-B6E0-485F-9AA3-8ACDC8F3D4CF} = {948B10AE-588B-40CE-8355-3040F21B2FA7}
+		{32BA22C7-54EF-4FC5-9091-786237015963} = {232CA6D7-B6E0-485F-9AA3-8ACDC8F3D4CF}
+		{E8F8DB3D-11B7-44CC-8EE5-287099455138} = {232CA6D7-B6E0-485F-9AA3-8ACDC8F3D4CF}
+		{46B9ECC6-316A-4682-91A8-45926F31CBFC} = {948B10AE-588B-40CE-8355-3040F21B2FA7}
+		{3391C1F4-FCB8-4940-8C7D-0343775F4094} = {46B9ECC6-316A-4682-91A8-45926F31CBFC}
+		{3BF15122-66B2-4DB4-9D02-FBC55DF695BC} = {46B9ECC6-316A-4682-91A8-45926F31CBFC}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F5F25DD4-BDDE-4701-B3BB-7D7EBE10B80F}
+	EndGlobalSection
+EndGlobal
