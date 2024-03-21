@@ -1,7 +1,10 @@
 package rpc;
 
-class RpcRequest {
+import java.io.Serializable;
 
+class RpcRequest implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 	public static final String DESTROY_METHOD = ".destroy";
 	private String service;
 	private String method;

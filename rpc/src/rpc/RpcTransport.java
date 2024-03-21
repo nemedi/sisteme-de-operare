@@ -1,6 +1,9 @@
 package rpc;
 
+import java.io.IOException;
+import java.io.Serializable;
 import java.lang.reflect.Type;
+import java.net.Socket;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -15,6 +18,7 @@ import com.google.gson.JsonParseException;
 class RpcTransport {
 	
 	private static Gson gson = new GsonBuilder()
+			.registerTypeAdapterFactory(new OptionalTypeAdapterFactory())
 			.registerTypeAdapter(RpcRequest.class, new RpcRequestDeserializer())
 			.registerTypeAdapter(RpcResponse.class, new RpcResponseDeserializer())
 			.create();
@@ -56,14 +60,32 @@ class RpcTransport {
 					element.getAsJsonObject().get("session").getAsString() : null);
 			return response;
 		}
-
 	}
-	
+
 	public static <T> T deserialize(String data, Class<T> type) {
 		return gson.fromJson(data, type);
 	}
 	
 	public static String serialize(Object object) {
 		return gson.toJson(object);
+	}
+	
+	public static <T extends Serializable> T receive(Socket socket, Class<T> type)
+			throws IOException {
+		byte[] buffer = new byte[socket.getInputStream().read()];
+		int count = 0;
+		while (count < buffer.length) {
+			count += socket.getInputStream().read(buffer, count, buffer.length);
+		}
+		return deserialize(new String(buffer), type);
+	}
+	
+	public static <T extends Serializable> void send(T object, Socket socket)
+			throws IOException {
+		String data = serialize(object);
+		byte[] buffer = data.getBytes();
+		socket.getOutputStream().write(buffer.length);
+		socket.getOutputStream().write(buffer, 0, buffer.length);
+		socket.getOutputStream().flush();
 	}
 }

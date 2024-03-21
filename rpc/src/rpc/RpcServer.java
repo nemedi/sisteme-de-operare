@@ -1,9 +1,6 @@
 package rpc;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -26,16 +23,10 @@ public class RpcServer implements AutoCloseable {
 		public void run() {
 			try {
 				if (socket != null && !socket.isClosed()) {
-					BufferedReader reader = new BufferedReader(
-							new InputStreamReader(
-									socket.getInputStream()));
-					PrintWriter writer = new PrintWriter(
-							socket.getOutputStream());
 					while (socket != null && !socket.isClosed()) {
 						try {
 							if (socket.getInputStream().available() > 0) {
-								RpcRequest request = RpcTransport.deserialize(reader.readLine(),
-										RpcRequest.class);
+								RpcRequest request = RpcTransport.receive(socket, RpcRequest.class);
 								RpcResponse response = new RpcResponse();
 								if (request != null) {
 									String service = request.getService();
@@ -45,8 +36,7 @@ public class RpcServer implements AutoCloseable {
 									} else {
 										response.setFault("Service unavailable.");
 									}
-									writer.println(RpcTransport.serialize(response));
-									writer.flush();
+									RpcTransport.send(response, socket);
 								} else {
 									response.setFault("Bad request.");								
 								}

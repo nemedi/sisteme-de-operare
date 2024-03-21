@@ -4,7 +4,6 @@ import java.text.MessageFormat;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Optional;
 import java.util.Scanner;
 
 public class Client {
@@ -27,9 +26,9 @@ public class Client {
 		commandHandlers.put("get", (proxy, scanner) -> {
 			System.out.print("id = ");
 			String id = scanner.nextLine();
-			Optional<Note> note = proxy.getNote(id);
-			if (note.isPresent()) {
-				System.out.println(note.get());
+			Note note = proxy.getNote(id);
+			if (note != null) {
+				System.out.println(note);
 			} else {
 				System.out.println("Not Found.");
 			}			
@@ -39,9 +38,9 @@ public class Client {
 			String title = scanner.nextLine();
 			System.out.print("content = ");
 			String content = scanner.nextLine();
-			Optional<Note> note = proxy.addNote(title, content);
-			if (note.isPresent()) {
-				System.out.println("Added:" + note.get());
+			Note note = proxy.addNote(title, content);
+			if (note != null) {
+				System.out.println("Added:" + note);
 			} else {
 				System.out.println("Not Added.");
 			}			
@@ -53,9 +52,9 @@ public class Client {
 			String title = scanner.nextLine();
 			System.out.print("content = ");
 			String content = scanner.nextLine();
-			Optional<Note> note = proxy.changeNote(id, title, content);
-			if (note.isPresent()) {
-				System.out.println("Changed:" + note.get());
+			Note note = proxy.changeNote(id, title, content);
+			if (note != null) {
+				System.out.println("Changed:" + note);
 			} else {
 				System.out.println("Not Added.");
 			}			

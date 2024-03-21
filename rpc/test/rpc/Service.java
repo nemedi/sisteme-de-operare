@@ -4,7 +4,6 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Optional;
 
 public class Service implements Contract {
 	
@@ -20,34 +19,34 @@ public class Service implements Contract {
 	}
 
 	@Override
-	public Optional<Note> getNote(String id) {
+	public Note getNote(String id) {
 		return id != null && notes.containsKey(id)?
-				Optional.of(notes.get(id)) : Optional.empty();
+				notes.get(id) : null;
 	}
 
 	@Override
-	public Optional<Note> addNote(String title, String content) {
+	public Note addNote(String title, String content) {
 		Note note = null;
 		if (title != null && content != null) {
 			note = new Note(title, content);
 			notes.put(note.getId(), note);
-			return Optional.of(note);
+			return note;
 		} else {
-			return Optional.empty();
+			return null;
 		}
 	}
 
 	@Override
-	public Optional<Note> changeNote(String id, String title, String content) {
+	public Note changeNote(String id, String title, String content) {
 		if (id != null
 				&& title != null
 				&& content != null && notes.containsKey(id)) {
 			Note note = notes.get(id);
 			note.setTitle(title);
 			note.setContent(content);
-			return Optional.of(note);
+			return note;
 		} else {
-			return Optional.empty();
+			return null;
 		}
 	}
 

@@ -1,7 +1,10 @@
 package rpc;
 
-class RpcResponse {
+import java.io.Serializable;
 
+class RpcResponse implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 	private Object result;
 	private String fault;
 	private String session;

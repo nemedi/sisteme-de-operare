@@ -17,9 +17,10 @@ public class Server {
 					}
 				}
 			}
-			System.exit(0);
 		} catch (Exception e) {
 			e.printStackTrace();
+		} finally {
+			System.exit(0);
 		}
 	}
 

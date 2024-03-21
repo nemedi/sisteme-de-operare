@@ -1,8 +1,5 @@
 package rpc;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
@@ -39,11 +36,8 @@ public class RpcProxy {
 				throws Exception {
 			try (Socket socket = new Socket(InetAddress.getByName(host), port)) {
 				RpcRequest request = new RpcRequest(service, method, arguments, session);
-				PrintWriter writer = new PrintWriter(socket.getOutputStream());
-				writer.println(RpcTransport.serialize(request));
-				writer.flush();
-				BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-				RpcResponse response = RpcTransport.deserialize(reader.readLine(), RpcResponse.class); 
+				RpcTransport.send(request, socket);
+				RpcResponse response = RpcTransport.receive(socket, RpcResponse.class); 
 				if (response.getFault() != null) {
 					throw new Exception(response.getFault());
 				}
