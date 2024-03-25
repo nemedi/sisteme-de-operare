@@ -11,9 +11,11 @@ public class Program {
             workers[i].join();
         }
         for (int i = 0; i < workers.length - 1; i++) {
-            if (workers[i].getSingleton() != workers[i + 1].getSingleton()) {
-                System.err.println("Multiple instance of the Singleton class were created.");
-                System.exit(1);
+            for (int j = i + 1; j < workers.length; j++) {
+                if (workers[i].getSingleton() != workers[j].getSingleton()) {
+                    System.err.println("Multiple instance of the Singleton class were created.");
+                    System.exit(1);
+                }
             }
         }
         System.out.println("Only one instance of the Singleton class was created.");
