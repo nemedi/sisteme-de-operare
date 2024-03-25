@@ -1,0 +1,14 @@
+/home/iulian/Projects/threads/c#/thread_pool/bin/Debug/net8.0/thread_pool
+/home/iulian/Projects/threads/c#/thread_pool/bin/Debug/net8.0/thread_pool.deps.json
+/home/iulian/Projects/threads/c#/thread_pool/bin/Debug/net8.0/thread_pool.runtimeconfig.json
+/home/iulian/Projects/threads/c#/thread_pool/bin/Debug/net8.0/thread_pool.dll
+/home/iulian/Projects/threads/c#/thread_pool/bin/Debug/net8.0/thread_pool.pdb
+/home/iulian/Projects/threads/c#/thread_pool/obj/Debug/net8.0/thread_pool.GeneratedMSBuildEditorConfig.editorconfig
+/home/iulian/Projects/threads/c#/thread_pool/obj/Debug/net8.0/thread_pool.AssemblyInfoInputs.cache
+/home/iulian/Projects/threads/c#/thread_pool/obj/Debug/net8.0/thread_pool.AssemblyInfo.cs
+/home/iulian/Projects/threads/c#/thread_pool/obj/Debug/net8.0/thread_pool.csproj.CoreCompileInputs.cache
+/home/iulian/Projects/threads/c#/thread_pool/obj/Debug/net8.0/thread_pool.dll
+/home/iulian/Projects/threads/c#/thread_pool/obj/Debug/net8.0/refint/thread_pool.dll
+/home/iulian/Projects/threads/c#/thread_pool/obj/Debug/net8.0/thread_pool.pdb
+/home/iulian/Projects/threads/c#/thread_pool/obj/Debug/net8.0/thread_pool.genruntimeconfig.cache
+/home/iulian/Projects/threads/c#/thread_pool/obj/Debug/net8.0/ref/thread_pool.dll

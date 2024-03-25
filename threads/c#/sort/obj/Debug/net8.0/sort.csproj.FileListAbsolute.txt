@@ -1,0 +1,14 @@
+/home/iulian/Projects/threads/c#/sort/bin/Debug/net8.0/sort
+/home/iulian/Projects/threads/c#/sort/bin/Debug/net8.0/sort.deps.json
+/home/iulian/Projects/threads/c#/sort/bin/Debug/net8.0/sort.runtimeconfig.json
+/home/iulian/Projects/threads/c#/sort/bin/Debug/net8.0/sort.dll
+/home/iulian/Projects/threads/c#/sort/bin/Debug/net8.0/sort.pdb
+/home/iulian/Projects/threads/c#/sort/obj/Debug/net8.0/sort.GeneratedMSBuildEditorConfig.editorconfig
+/home/iulian/Projects/threads/c#/sort/obj/Debug/net8.0/sort.AssemblyInfoInputs.cache
+/home/iulian/Projects/threads/c#/sort/obj/Debug/net8.0/sort.AssemblyInfo.cs
+/home/iulian/Projects/threads/c#/sort/obj/Debug/net8.0/sort.csproj.CoreCompileInputs.cache
+/home/iulian/Projects/threads/c#/sort/obj/Debug/net8.0/sort.dll
+/home/iulian/Projects/threads/c#/sort/obj/Debug/net8.0/refint/sort.dll
+/home/iulian/Projects/threads/c#/sort/obj/Debug/net8.0/sort.pdb
+/home/iulian/Projects/threads/c#/sort/obj/Debug/net8.0/sort.genruntimeconfig.cache
+/home/iulian/Projects/threads/c#/sort/obj/Debug/net8.0/ref/sort.dll

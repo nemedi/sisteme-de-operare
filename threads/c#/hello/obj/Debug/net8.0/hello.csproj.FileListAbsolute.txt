@@ -1,0 +1,14 @@
+/home/iulian/Projects/threads/c#/hello/bin/Debug/net8.0/hello
+/home/iulian/Projects/threads/c#/hello/bin/Debug/net8.0/hello.deps.json
+/home/iulian/Projects/threads/c#/hello/bin/Debug/net8.0/hello.runtimeconfig.json
+/home/iulian/Projects/threads/c#/hello/bin/Debug/net8.0/hello.dll
+/home/iulian/Projects/threads/c#/hello/bin/Debug/net8.0/hello.pdb
+/home/iulian/Projects/threads/c#/hello/obj/Debug/net8.0/hello.GeneratedMSBuildEditorConfig.editorconfig
+/home/iulian/Projects/threads/c#/hello/obj/Debug/net8.0/hello.AssemblyInfoInputs.cache
+/home/iulian/Projects/threads/c#/hello/obj/Debug/net8.0/hello.AssemblyInfo.cs
+/home/iulian/Projects/threads/c#/hello/obj/Debug/net8.0/hello.csproj.CoreCompileInputs.cache
+/home/iulian/Projects/threads/c#/hello/obj/Debug/net8.0/hello.dll
+/home/iulian/Projects/threads/c#/hello/obj/Debug/net8.0/refint/hello.dll
+/home/iulian/Projects/threads/c#/hello/obj/Debug/net8.0/hello.pdb
+/home/iulian/Projects/threads/c#/hello/obj/Debug/net8.0/hello.genruntimeconfig.cache
+/home/iulian/Projects/threads/c#/hello/obj/Debug/net8.0/ref/hello.dll
