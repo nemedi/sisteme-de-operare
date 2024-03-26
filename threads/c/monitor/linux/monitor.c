@@ -4,7 +4,8 @@
 
 #define BUFFER_SIZE 10
 
-typedef struct {
+typedef struct
+{
     int buffer[BUFFER_SIZE];
     int count;
     pthread_mutex_t mutex;
@@ -12,16 +13,19 @@ typedef struct {
     pthread_cond_t cond_cons;
 } Monitor;
 
-void monitor_init(Monitor *mon) {
+void monitor_init(Monitor *mon)
+{
     mon->count = 0;
     pthread_mutex_init(&mon->mutex, NULL);
     pthread_cond_init(&mon->cond_prod, NULL);
     pthread_cond_init(&mon->cond_cons, NULL);
 }
 
-void monitor_produce(Monitor *mon, int item) {
+void monitor_produce(Monitor *mon, int item)
+{
     pthread_mutex_lock(&mon->mutex);
-    while (mon->count == BUFFER_SIZE) {
+    while (mon->count == BUFFER_SIZE)
+    {
         pthread_cond_wait(&mon->cond_prod, &mon->mutex);
     }
     mon->buffer[mon->count++] = item;
@@ -30,10 +34,12 @@ void monitor_produce(Monitor *mon, int item) {
     pthread_mutex_unlock(&mon->mutex);
 }
 
-int monitor_consume(Monitor *mon) {
+int monitor_consume(Monitor *mon)
+{
     int item;
     pthread_mutex_lock(&mon->mutex);
-    while (mon->count == 0) {
+    while (mon->count == 0)
+    {
         pthread_cond_wait(&mon->cond_cons, &mon->mutex);
     }
     item = mon->buffer[--mon->count];
@@ -43,22 +49,26 @@ int monitor_consume(Monitor *mon) {
     return item;
 }
 
-void monitor_destroy(Monitor *mon) {
+void monitor_destroy(Monitor *mon)
+{
     pthread_mutex_destroy(&mon->mutex);
     pthread_cond_destroy(&mon->cond_prod);
     pthread_cond_destroy(&mon->cond_cons);
 }
 
-void *producer(void *arg) {
+void *producer(void *arg)
+{
     Monitor *mon = (Monitor *)arg;
     int item = 0;
-    while (1) {
+    while (1)
+    {
         monitor_produce(mon, item++);
     }
     return NULL;
 }
 
-void *consumer(void *arg) {
+void *consumer(void *arg)
+{
     Monitor *mon = (Monitor *)arg;
     while (1) {
         monitor_consume(mon);
@@ -66,7 +76,8 @@ void *consumer(void *arg) {
     return NULL;
 }
 
-int main() {
+int main()
+{
     Monitor mon;
     monitor_init(&mon);
     pthread_t prod_thread, cons_thread;

@@ -3,22 +3,27 @@
 
 HANDLE mutex;
 
-DWORD WINAPI threadFunction1(LPVOID lpParam) {
+DWORD WINAPI threadFunction1(LPVOID lpParam)
+{
     WaitForSingleObject(mutex, INFINITE);
     printf("Thread 1 is in the critical section\n");
     ReleaseMutex(mutex);
     return 0;
 }
-DWORD WINAPI threadFunction2(LPVOID lpParam) {
+
+DWORD WINAPI threadFunction2(LPVOID lpParam)
+{
     WaitForSingleObject(mutex, INFINITE);
     printf("Thread 2 is in the critical section\n");
     ReleaseMutex(mutex);
     return 0;
 }
 
-int main() {
+int main()
+{
     mutex = CreateMutex(NULL, FALSE, NULL);
-    if (mutex == NULL) {
+    if (mutex == NULL)
+    {
         printf("Mutex creation failed\n");
         return 1;
     }

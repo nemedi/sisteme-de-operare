@@ -3,7 +3,8 @@
 
 #define BUFFER_SIZE 10
 
-typedef struct {
+typedef struct
+{
     int buffer[BUFFER_SIZE];
     int count;
     HANDLE mutex;
@@ -11,14 +12,16 @@ typedef struct {
     HANDLE cond_cons;
 } Monitor;
 
-void monitor_init(Monitor *mon) {
+void monitor_init(Monitor *mon)
+{
     mon->count = 0;
     mon->mutex = CreateMutex(NULL, FALSE, NULL);
     mon->cond_prod = CreateEvent(NULL, FALSE, FALSE, NULL);
     mon->cond_cons = CreateEvent(NULL, FALSE, FALSE, NULL);
 }
 
-void monitor_produce(Monitor *mon, int item) {
+void monitor_produce(Monitor *mon, int item)
+{
     WaitForSingleObject(mon->mutex, INFINITE);
     while (mon->count == BUFFER_SIZE) {
         WaitForSingleObject(mon->cond_prod, INFINITE);
@@ -29,10 +32,12 @@ void monitor_produce(Monitor *mon, int item) {
     ReleaseMutex(mon->mutex);
 }
 
-int monitor_consume(Monitor *mon) {
+int monitor_consume(Monitor *mon)
+{
     int item;
     WaitForSingleObject(mon->mutex, INFINITE);
-    while (mon->count == 0) {
+    while (mon->count == 0)
+    {
         WaitForSingleObject(mon->cond_cons, INFINITE);
     }
     item = mon->buffer[--mon->count];
@@ -42,13 +47,15 @@ int monitor_consume(Monitor *mon) {
     return item;
 }
 
-void monitor_destroy(Monitor *mon) {
+void monitor_destroy(Monitor *mon)
+{
     CloseHandle(mon->mutex);
     CloseHandle(mon->cond_prod);
     CloseHandle(mon->cond_cons);
 }
 
-void producer(void *arg) {
+void producer(void *arg)
+{
     Monitor *mon = (Monitor *)arg;
     int item = 0;
     while (1) {
@@ -56,14 +63,16 @@ void producer(void *arg) {
     }
 }
 
-void consumer(void *arg) {
+void consumer(void *arg)
+{
     Monitor *mon = (Monitor *)arg;
     while (1) {
         monitor_consume(mon);
     }
 }
 
-int main() {
+int main()
+{
     Monitor mon;
     monitor_init(&mon);
     HANDLE prod_thread = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)producer, &mon, 0, NULL);

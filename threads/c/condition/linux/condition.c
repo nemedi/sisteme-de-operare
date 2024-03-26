@@ -9,11 +9,14 @@ pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
 pthread_cond_t cond_prod = PTHREAD_COND_INITIALIZER;
 pthread_cond_t cond_cons = PTHREAD_COND_INITIALIZER;
 
-void *producer(void *arg) {
+void *producer(void *arg)
+{
     int item = 0;
-    while (1) {
+    while (1)
+    {
         pthread_mutex_lock(&mutex);
-        while (count == BUFFER_SIZE) {
+        while (count == BUFFER_SIZE)
+        {
             pthread_cond_wait(&cond_prod, &mutex);
         }
         buffer[count++] = item++;
@@ -24,10 +27,13 @@ void *producer(void *arg) {
     return NULL;
 }
 
-void *consumer(void *arg) {
-    while (1) {
+void *consumer(void *arg)
+{
+    while (1)
+    {
         pthread_mutex_lock(&mutex);
-        while (count == 0) {
+        while (count == 0)
+        {
             pthread_cond_wait(&cond_cons, &mutex);
         }
         int item = buffer[--count];
@@ -38,7 +44,8 @@ void *consumer(void *arg) {
     return NULL;
 }
 
-int main() {
+int main()
+{
     pthread_t prod_thread, cons_thread;
     pthread_create(&prod_thread, NULL, producer, NULL);
     pthread_create(&cons_thread, NULL, consumer, NULL);

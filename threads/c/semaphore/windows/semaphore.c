@@ -3,22 +3,27 @@
 
 HANDLE semaphore;
 
-DWORD WINAPI threadFunction1(LPVOID lpParam) {
+DWORD WINAPI threadFunction1(LPVOID lpParam)
+{
     WaitForSingleObject(semaphore, INFINITE);
     printf("Thread 1 is in the critical section\n");
     ReleaseSemaphore(semaphore, 1, NULL);
     return 0;
 }
-DWORD WINAPI threadFunction2(LPVOID lpParam) {
+
+DWORD WINAPI threadFunction2(LPVOID lpParam)
+{
     WaitForSingleObject(semaphore, INFINITE);
     printf("Thread 2 is in the critical section\n");
     ReleaseSemaphore(semaphore, 1, NULL);
     return 0;
 }
 
-int main() {
+int main()
+{
     semaphore = CreateSemaphore(NULL, 0, 1, NULL);
-    if (semaphore == NULL) {
+    if (semaphore == NULL)
+    {
         printf("Semaphore creation failed\n");
         return 1;
     }

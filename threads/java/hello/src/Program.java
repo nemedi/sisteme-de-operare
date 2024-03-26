@@ -1,10 +1,11 @@
 public class Program {
 
-    public static void main(String[] args) {
-        int n = 10;
-        for (int i = 0; i < n; i++) {
-            Thread thread  = new Thread(new Worker(), "Thread" + (i + 1));
-            thread.start();
-        }
+    public static void main(String[] args) throws InterruptedException {
+        String threadName = "MyThread";
+        Thread thread = new Thread(() ->
+            System.out.println("Hello World from " + Thread.currentThread().getName() + "!"));
+        thread.setName(threadName);
+        thread.start();
+        thread.join();
     }
 }

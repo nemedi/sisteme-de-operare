@@ -9,11 +9,14 @@ HANDLE mutex;
 HANDLE cond_prod;
 HANDLE cond_cons;
 
-DWORD WINAPI producer(LPVOID lpParam) {
+DWORD WINAPI producer(LPVOID lpParam) 
+{
     int item = 0;
-    while (1) {
+    while (1)
+    {
         WaitForSingleObject(mutex, INFINITE);
-        while (count == BUFFER_SIZE) {
+        while (count == BUFFER_SIZE)
+        {
             WaitForSingleObject(cond_prod, INFINITE);
         }
         buffer[count++] = item++;
@@ -24,10 +27,13 @@ DWORD WINAPI producer(LPVOID lpParam) {
     return 0;
 }
 
-DWORD WINAPI consumer(LPVOID lpParam) {
-    while (1) {
+DWORD WINAPI consumer(LPVOID lpParam)
+{
+    while (1)
+    {
         WaitForSingleObject(mutex, INFINITE);
-        while (count == 0) {
+        while (count == 0)
+        {
             WaitForSingleObject(cond_cons, INFINITE);
         }
         int item = buffer[--count];
@@ -38,7 +44,8 @@ DWORD WINAPI consumer(LPVOID lpParam) {
     return 0;
 }
 
-int main() {
+int main()
+{
     mutex = CreateMutex(NULL, FALSE, NULL);
     cond_prod = CreateEvent(NULL, FALSE, FALSE, NULL);
     cond_cons = CreateEvent(NULL, FALSE, FALSE, NULL);

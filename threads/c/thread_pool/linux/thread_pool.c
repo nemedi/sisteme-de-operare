@@ -102,7 +102,8 @@ int main()
         *task_id = i;
         thread_pool_add_task(pool, task_execute, task_id);
     }
-    for (int i = 0; i < NUM_THREADS; i++) {
+    for (int i = 0; i < NUM_THREADS; i++)
+    {
         pthread_join(threads[i], NULL);
     }
     thread_pool_destroy(pool);
