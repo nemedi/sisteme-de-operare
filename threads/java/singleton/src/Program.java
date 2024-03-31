@@ -1,5 +1,5 @@
 public class Program {
-    
+
     public static void main(String[] args) throws InterruptedException {
         int n = 10;
         Worker[] workers = new Worker[n];

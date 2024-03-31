@@ -66,7 +66,12 @@ public class Client extends JFrame {
 		textField.setColumns(10);
 		new Thread(() -> {
 			while (!socket.isClosed()) {
-				reader.lines().forEach(l -> messages.addElement(l));
+				try {
+					reader.lines().forEach(l -> messages.addElement(l));
+					Thread.sleep(100);
+				} catch (InterruptedException e) {
+					break;
+				}
 			}
 		}).start();
 	}

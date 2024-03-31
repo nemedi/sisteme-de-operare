@@ -1,15 +1,15 @@
 public class Singleton {
-    
+
     private static Singleton instance;
 
     private Singleton() {
         StackTraceElement[] stackTrace = Thread.currentThread().getStackTrace();
         if (!Singleton.class.getName().equals(stackTrace[2].getClassName())
             || !"getInstance".equals(stackTrace[2].getMethodName())) {
-                throw new InstantiationError("Constructor was called by another method than getgInstance.");
+                throw new InstantiationError("Constructor was called by another method than getInstance.");
             }
     }
-
+    
     public static Singleton getInstance() {
         if (instance == null) {
             synchronized (Singleton.class) {
@@ -20,5 +20,5 @@ public class Singleton {
         }
         return instance;
     }
-
 }
+

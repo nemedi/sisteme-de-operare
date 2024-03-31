@@ -10,5 +10,4 @@ public class Worker extends Thread {
     public Singleton getSingleton() {
         return singleton;
     }
-    
 }
