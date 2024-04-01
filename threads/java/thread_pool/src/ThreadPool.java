@@ -7,11 +7,24 @@ public class ThreadPool {
     private volatile boolean running;
 
     public ThreadPool(int poolSize) {
-        this.taskQueue = new LinkedBlockingQueue<>();
+        this.taskQueue = new LinkedBlockingQueue<Runnable>();
         this.threads = new Thread[poolSize];
         this.running = true;
+		final Runnable runnable = () -> {
+			while (running || !taskQueue.isEmpty()) {
+                try {
+                	Runnable task = taskQueue.take();
+                	if (task != null) {
+	                    task.run();
+                	}
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
+            }
+		};
         for (int i = 0; i < poolSize; i++) {
-            threads[i] = new WorkerThread();
+            threads[i] = new Thread(runnable);
+			threads[i].setName("Thread-" + (i + 1));
             threads[i].start();
         }
     }
@@ -26,32 +39,5 @@ public class ThreadPool {
     
     public void shutdown() {
     	this.running = false;
-    }
-
-    private class WorkerThread extends Thread {
-        @Override
-        public void run() {
-            while (running || !taskQueue.isEmpty()) {
-                try {
-                	Runnable task = taskQueue.take();
-                	if (task != null) {
-	                    task.run();
-                	}
-                } catch (InterruptedException e) {
-                    Thread.currentThread().interrupt();
-                }
-            }
-        }
-    }
-
-    public static void main(String[] args) {
-        ThreadPool threadPool = new ThreadPool(5);
-        for (int i = 0; i < 10; i++) {
-            final int taskId = i;
-            threadPool.submitTask(() -> {
-                System.out.println("Task " + taskId + " executed by thread: " + Thread.currentThread().getName());
-            });
-        }
-        threadPool.shutdown();
     }
 }

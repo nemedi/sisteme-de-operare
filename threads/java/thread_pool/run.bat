@@ -1,1 +1,1 @@
-java -cp .\bin ThreadPool
+java -cp .\bin Program

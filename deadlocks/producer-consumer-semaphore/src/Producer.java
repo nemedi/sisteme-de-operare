@@ -3,16 +3,19 @@ import java.util.concurrent.Semaphore;
 
 public class Producer implements Runnable {
 
+	private int id;
 	private Buffer buffer;
 	private Semaphore putLock;
 	private Semaphore takeLock;
 	private Semaphore bufferLock;
 	private Random random;
 
-	public Producer(Buffer buffer,
+	public Producer(int id,
+			Buffer buffer,
 			Semaphore putLock,
 			Semaphore takeLock,
 			Semaphore bufferLock) {
+		this.id = id;
 		this.buffer = buffer;
 		this.putLock = putLock;
 		this.takeLock = takeLock;
@@ -28,17 +31,20 @@ public class Producer implements Runnable {
 				putLock.acquire();
 				bufferLock.acquire();
 				buffer.put(item);
-				System.out.println("producer: " + item);
 				bufferLock.release();
 				takeLock.release();
-				Thread.sleep(1000);
 			} catch (InterruptedException e) {
-				break;
 			}
 		}
 	}
 
 	private int produce() {
-		return random.nextInt(100) + 1;
+		int item = random.nextInt(100) + 1;
+		System.out.println("producer " + id + ": " + item);
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+		}
+		return item;
 	}
 }
