@@ -9,11 +9,8 @@ public class Consumer implements Runnable {
 	}
 	
 	private void consume(int item) {
-		try {
-			System.out.println("consumer " + id + ": " + item);
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-		}
+		System.out.println("consumer " + id + ": " + item);
+		Delayer.delay();
 	}
 	
 	@Override

@@ -40,6 +40,7 @@ public class Buffer {
 		}
 		internalPut(item);
 		notifyAll(takeLock);
+		System.out.println("count: " + count);
 	}
 	public int take() throws InterruptedException {
 		if (isEmpty()) {
@@ -47,6 +48,7 @@ public class Buffer {
 		}
 		int item = internalTake();
 		notifyAll(putLock);
+		System.out.println("count: " + count);
 		return item;
 	}
 }

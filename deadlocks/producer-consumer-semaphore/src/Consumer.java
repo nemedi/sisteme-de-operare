@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.concurrent.Semaphore;
 
 public class Consumer implements Runnable {
@@ -10,14 +11,14 @@ public class Consumer implements Runnable {
 
 	public Consumer(int id,
 			Buffer buffer,
-			Semaphore full,
-			Semaphore empty,
-			Semaphore mutex) {
+			Semaphore putLock,
+			Semaphore takeLock,
+			Semaphore bufferLock) {
 		this.id = id;
 		this.buffer = buffer;
-		this.putLock = full;
-		this.takeLock = empty;
-		this.bufferLock = mutex;
+		this.putLock = putLock;
+		this.takeLock = takeLock;
+		this.bufferLock = bufferLock;
 	}
 
 	@Override
@@ -37,9 +38,6 @@ public class Consumer implements Runnable {
 	
 	private void consume(int item) {
 		System.out.println("consumer " + id + ": " + item);
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-		}
+		Delayer.delay();
 	}
 }

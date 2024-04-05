@@ -6,7 +6,7 @@ public class Producer implements Runnable {
 	private int id;
 	private Buffer buffer;
 	private Semaphore putLock;
-	private Semaphore takeLock;
+	private Semaphore takeLck;
 	private Semaphore bufferLock;
 	private Random random;
 
@@ -18,7 +18,7 @@ public class Producer implements Runnable {
 		this.id = id;
 		this.buffer = buffer;
 		this.putLock = putLock;
-		this.takeLock = takeLock;
+		this.takeLck = takeLock;
 		this.bufferLock = bufferLock;
 		this.random = new Random();
 	}
@@ -32,7 +32,7 @@ public class Producer implements Runnable {
 				bufferLock.acquire();
 				buffer.put(item);
 				bufferLock.release();
-				takeLock.release();
+				takeLck.release();
 			} catch (InterruptedException e) {
 			}
 		}
@@ -41,10 +41,7 @@ public class Producer implements Runnable {
 	private int produce() {
 		int item = random.nextInt(100) + 1;
 		System.out.println("producer " + id + ": " + item);
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-		}
+		Delayer.delay();
 		return item;
 	}
 }

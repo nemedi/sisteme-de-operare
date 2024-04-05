@@ -9,10 +9,12 @@ public class Buffer {
 	}
 	
 	public void put(int item) {
+		System.out.println("count: " + count);
 		array[count++] = item;
 	}
 	
 	public int take() {
+		System.out.println("count: " + count);
 		return array[--count];
 	}
 	

@@ -15,10 +15,7 @@ public class Producer implements Runnable {
 	private int produce() {
 		var item = random.nextInt(100) + 1;
 		System.out.println("producer " + id + " : " + item);
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-		}
+		Delayer.delay();
 		return item;
 	}
 	
