@@ -155,6 +155,11 @@ public class Commands {
 				|| ">>".equals(arguments[arguments.length - 2])) {
 			Path path = resolver.apply(arguments[arguments.length - 1]);
 			String text = Stream.of(Arrays.copyOfRange(arguments, 0, arguments.length - 2))
+					.map(s -> s.startsWith("\"")
+						? s.substring(1)
+						: (s.endsWith("\"")
+							? s.substring(0, s.length() - 1)
+							: s))
 				.collect(joining(" ")) + System.getProperty("line.separator");
 			Files.writeString(path, text,
 					">>".equals(arguments[arguments.length - 2])
