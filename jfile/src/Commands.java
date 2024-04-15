@@ -1,5 +1,3 @@
-package jfile;
-
 import java.io.IOException;
 import java.io.PrintStream;
 import java.nio.file.Files;
@@ -10,6 +8,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Stream;
+import java.lang.reflect.Modifier;
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.summarizingLong;
 
@@ -372,6 +371,17 @@ public class Commands {
 			exit = 3;
 		}
 		return exit;
+	}
+
+	public static int help() {
+		out.println("JFile version 1.0 by Iulian ILIE-NEMEDI");
+		out.println("Available commands:");
+		Stream.of(Commands.class.getDeclaredMethods())
+				.filter(m -> Modifier.isStatic(m.getModifiers()) && !m.getName().contains("$"))
+				.map(m -> m.getName())
+				.sorted((first, second) -> first.compareTo(second))
+				.forEach(out::println);
+		return 0;
 	}
 	
 }

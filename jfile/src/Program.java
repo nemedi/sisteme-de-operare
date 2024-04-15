@@ -1,5 +1,3 @@
-package jfile;
-
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.Arrays;
