@@ -1,5 +1,3 @@
-package client;
-
 import java.io.File;
 
 import org.eclipse.jface.viewers.ArrayContentProvider;

@@ -1,5 +1,3 @@
-package client;
-
 import java.awt.EventQueue;
 import java.awt.GridLayout;
 import java.io.File;
