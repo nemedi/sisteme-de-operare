@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.net.URI;
 import java.nio.file.FileStore;
 import java.nio.file.FileSystem;
+import java.nio.file.FileSystems;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.PathMatcher;
 import java.nio.file.Paths;
@@ -18,16 +20,18 @@ import java.util.Set;
 
 public class ClusterFileSystem extends FileSystem {
 	
+	private FileSystemProvider provider;
 	private ClusterClient client;
 	
-	public ClusterFileSystem(URI uri) throws RemoteException, NotBoundException {
+	public ClusterFileSystem(URI uri, FileSystemProvider provider) throws RemoteException, NotBoundException {
+		this.provider = provider;
 		if (uri != null) {
 			client = new ClusterClient(uri);
 		}
 	}
 	
-	public ClusterFileSystem() throws RemoteException, NotBoundException {
-		this(null);
+	public ClusterFileSystem(FileSystemProvider provider) throws RemoteException, NotBoundException {
+		this(null, provider);
 	}
 	
 	public boolean isLocal() {
@@ -36,8 +40,7 @@ public class ClusterFileSystem extends FileSystem {
 
 	@Override
 	public FileSystemProvider provider() {
-		// TODO Auto-generated method stub
-		return null;
+		return provider;
 	}
 
 	@Override
@@ -80,17 +83,21 @@ public class ClusterFileSystem extends FileSystem {
 
 	@Override
 	public Iterable<FileStore> getFileStores() {
-		// TODO Auto-generated method stub
-		return null;
+		return client != null
+				? client.getFileStores()
+				: FileSystems.getDefault().getFileStores();
 	}
 
 	@Override
 	public Set<String> supportedFileAttributeViews() {
-		return null;
+		return client != null
+			? client.supportedFileAttributeViews()
+			: FileSystems.getDefault().supportedFileAttributeViews();
 	}
 
 	@Override
 	public Path getPath(String first, String... more) {
+		// first = URI.create(first).getPath();
 		return client != null
 			? client.getPath(first, more)
 			: Paths.get(first, more);
@@ -123,7 +130,9 @@ public class ClusterFileSystem extends FileSystem {
 	}
 	
 	public boolean isHidden(Path path) throws IOException {
-		return false;
+		return client != null
+				? client.isHidden(path)
+				: Files.isHidden(path);
 	}
 	
 	public void createDirectory(Path path, FileAttribute<?>... attributes) throws IOException {
@@ -136,6 +145,10 @@ public class ClusterFileSystem extends FileSystem {
 	
 	public boolean isSameFile(Path firstPath, Path secondPath) throws IOException {
 		return false;
+	}
+	
+	public Path getPath(URI uri) {
+		return null;
 	}
 
 }

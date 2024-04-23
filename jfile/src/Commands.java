@@ -117,7 +117,7 @@ public class Commands {
 			Files.createFile(path);
 		} else {
 			out.println("File or folder already exists: " + name);
-			exit = 1;
+			exit = 2;
 		}
 		return exit;
 	}

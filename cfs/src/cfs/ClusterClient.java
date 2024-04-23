@@ -4,6 +4,7 @@ import static java.util.stream.Collectors.toList;
 
 import java.io.IOException;
 import java.net.URI;
+import java.nio.file.FileStore;
 import java.nio.file.LinkOption;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -15,6 +16,7 @@ import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.util.Arrays;
 import java.util.Map;
+import java.util.Set;
 
 public class ClusterClient {
 	
@@ -61,5 +63,17 @@ public class ClusterClient {
 	
 	public <A extends BasicFileAttributes> A readAttributes(Path path, Class<A> type, LinkOption... options) {
 		return null;
+	}
+	
+	public Set<String> supportedFileAttributeViews() {
+		return null;
+	}
+	
+	public Iterable<FileStore> getFileStores() {
+		return null;
+	}
+	
+	public boolean isHidden(Path path) throws IOException {
+		return false;
 	}
 }

@@ -1,5 +1,6 @@
 package cfs;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.FileSystems;
 import java.rmi.RemoteException;
@@ -23,7 +24,10 @@ public class ClusterNode {
 						e.printStackTrace();
 					}
 				});
+			boolean hidden = new File("cfs://localhost/D:/Work").isHidden();
+			System.out.println(hidden);
 			new ClusterService(registry);
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

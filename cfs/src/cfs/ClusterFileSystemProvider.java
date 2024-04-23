@@ -15,6 +15,7 @@ import java.nio.file.Files;
 import java.nio.file.LinkOption;
 import java.nio.file.OpenOption;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.nio.file.attribute.FileAttribute;
 import java.nio.file.attribute.FileAttributeView;
@@ -40,7 +41,7 @@ public class ClusterFileSystemProvider extends FileSystemProvider {
 	public FileSystem newFileSystem(URI uri, Map<String, ?> env) throws IOException {
 		try {
 			String host = uri.getHost();
-			ClusterFileSystem fileSystem = new ClusterFileSystem(isLocal(host) ? null : uri);
+			ClusterFileSystem fileSystem = new ClusterFileSystem(isLocal(host) ? null : uri, this);
 			fileSystemCache.put(host, fileSystem);
 			return fileSystem;
 		} catch (RemoteException | NotBoundException e) {
@@ -55,8 +56,15 @@ public class ClusterFileSystemProvider extends FileSystemProvider {
 
 	@Override
 	public Path getPath(URI uri) {
-		// TODO Auto-generated method stub
-		return null;
+		String host = uri.getHost();
+		uri = URI.create(uri.getPath().substring(1));
+		if (isLocal(host)) {
+			return Paths.get(uri);
+		} else if (fileSystemCache.containsKey(host)) {
+			return fileSystemCache.get(host).getPath(uri);
+		} else {
+			return null;
+		}
 	}
 
 	@Override
