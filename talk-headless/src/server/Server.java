@@ -80,6 +80,7 @@ public class Server implements AutoCloseable {
 				}
 			}
 		} catch (Exception e) {
+			e.printStackTrace();
 		} finally {
 			System.exit(0);
 		}
