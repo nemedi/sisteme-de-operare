@@ -1,5 +1,3 @@
-package demo;
-
 public class Program {
 
 	public static void main(String[] args) {
@@ -16,7 +14,7 @@ public class Program {
 			FieldSetter.set("value", "Romania", "Hungary");
 			System.out.println(String.format("Transylvania belongs to %s.", "Romania"));
 		} catch (Exception e) {
-			System.out.println(e.getLocalizedMessage());
+			e.printStackTrace();
 		}
 	}
 	

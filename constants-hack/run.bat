@@ -1,0 +1,1 @@
+"C:\Program Files\Zulu\zulu-11\bin\java.exe" -cp .\bin Program
