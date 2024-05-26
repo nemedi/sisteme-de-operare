@@ -1,121 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Work\\ASE\\SO\\sisteme-de-operare\\FileExplorer\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{8EF379D5-2A4E-4211-952E-0EF9653C9F07}|FileExplorer\\FileExplorer.csproj|d:\\work\\ase\\so\\sisteme-de-operare\\fileexplorer\\fileexplorer\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8EF379D5-2A4E-4211-952E-0EF9653C9F07}|FileExplorer\\FileExplorer.csproj|solutionrelative:fileexplorer\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8EF379D5-2A4E-4211-952E-0EF9653C9F07}|FileExplorer\\FileExplorer.csproj|d:\\work\\ase\\so\\sisteme-de-operare\\fileexplorer\\fileexplorer\\mainwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8EF379D5-2A4E-4211-952E-0EF9653C9F07}|FileExplorer\\FileExplorer.csproj|solutionrelative:fileexplorer\\mainwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8EF379D5-2A4E-4211-952E-0EF9653C9F07}|FileExplorer\\FileExplorer.csproj|d:\\work\\ase\\so\\sisteme-de-operare\\fileexplorer\\fileexplorer\\mainwindow.axaml||{52A100FB-4151-3710-80C3-8B555898AD56}",
-      "RelativeMoniker": "D:0:0:{8EF379D5-2A4E-4211-952E-0EF9653C9F07}|FileExplorer\\FileExplorer.csproj|solutionrelative:fileexplorer\\mainwindow.axaml||{52A100FB-4151-3710-80C3-8B555898AD56}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8EF379D5-2A4E-4211-952E-0EF9653C9F07}|FileExplorer\\FileExplorer.csproj|d:\\work\\ase\\so\\sisteme-de-operare\\fileexplorer\\fileexplorer\\observableobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8EF379D5-2A4E-4211-952E-0EF9653C9F07}|FileExplorer\\FileExplorer.csproj|solutionrelative:fileexplorer\\observableobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8EF379D5-2A4E-4211-952E-0EF9653C9F07}|FileExplorer\\FileExplorer.csproj|d:\\work\\ase\\so\\sisteme-de-operare\\fileexplorer\\fileexplorer\\filemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8EF379D5-2A4E-4211-952E-0EF9653C9F07}|FileExplorer\\FileExplorer.csproj|solutionrelative:fileexplorer\\filemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8EF379D5-2A4E-4211-952E-0EF9653C9F07}|FileExplorer\\FileExplorer.csproj|d:\\work\\ase\\so\\sisteme-de-operare\\fileexplorer\\fileexplorer\\foldermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8EF379D5-2A4E-4211-952E-0EF9653C9F07}|FileExplorer\\FileExplorer.csproj|solutionrelative:fileexplorer\\foldermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 2,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MainWindow.axaml.cs",
-              "DocumentMoniker": "D:\\Work\\ASE\\SO\\sisteme-de-operare\\FileExplorer\\FileExplorer\\MainWindow.axaml.cs",
-              "RelativeDocumentMoniker": "FileExplorer\\MainWindow.axaml.cs",
-              "ToolTip": "D:\\Work\\ASE\\SO\\sisteme-de-operare\\FileExplorer\\FileExplorer\\MainWindow.axaml.cs",
-              "RelativeToolTip": "FileExplorer\\MainWindow.axaml.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAADwvw4AAAArAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-25T10:07:47.318Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ObservableObject.cs",
-              "DocumentMoniker": "D:\\Work\\ASE\\SO\\sisteme-de-operare\\FileExplorer\\FileExplorer\\ObservableObject.cs",
-              "RelativeDocumentMoniker": "FileExplorer\\ObservableObject.cs",
-              "ToolTip": "D:\\Work\\ASE\\SO\\sisteme-de-operare\\FileExplorer\\FileExplorer\\ObservableObject.cs",
-              "RelativeToolTip": "FileExplorer\\ObservableObject.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAADwvwsAAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-25T10:07:16.654Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MainViewModel.cs",
-              "DocumentMoniker": "D:\\Work\\ASE\\SO\\sisteme-de-operare\\FileExplorer\\FileExplorer\\MainViewModel.cs",
-              "RelativeDocumentMoniker": "FileExplorer\\MainViewModel.cs",
-              "ToolTip": "D:\\Work\\ASE\\SO\\sisteme-de-operare\\FileExplorer\\FileExplorer\\MainViewModel.cs",
-              "RelativeToolTip": "FileExplorer\\MainViewModel.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAvwCYAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-25T10:07:10.642Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "FolderModel.cs",
-              "DocumentMoniker": "D:\\Work\\ASE\\SO\\sisteme-de-operare\\FileExplorer\\FileExplorer\\FolderModel.cs",
-              "RelativeDocumentMoniker": "FileExplorer\\FolderModel.cs",
-              "ToolTip": "D:\\Work\\ASE\\SO\\sisteme-de-operare\\FileExplorer\\FileExplorer\\FolderModel.cs",
-              "RelativeToolTip": "FileExplorer\\FolderModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-25T10:06:54.77Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MainWindow.axaml",
-              "DocumentMoniker": "D:\\Work\\ASE\\SO\\sisteme-de-operare\\FileExplorer\\FileExplorer\\MainWindow.axaml",
-              "RelativeDocumentMoniker": "FileExplorer\\MainWindow.axaml",
-              "ToolTip": "D:\\Work\\ASE\\SO\\sisteme-de-operare\\FileExplorer\\FileExplorer\\MainWindow.axaml",
-              "RelativeToolTip": "FileExplorer\\MainWindow.axaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-04-25T10:06:32.923Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "FileModel.cs",
-              "DocumentMoniker": "D:\\Work\\ASE\\SO\\sisteme-de-operare\\FileExplorer\\FileExplorer\\FileModel.cs",
-              "RelativeDocumentMoniker": "FileExplorer\\FileModel.cs",
-              "ToolTip": "D:\\Work\\ASE\\SO\\sisteme-de-operare\\FileExplorer\\FileExplorer\\FileModel.cs",
-              "RelativeToolTip": "FileExplorer\\FileModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-25T10:06:19.164Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }
