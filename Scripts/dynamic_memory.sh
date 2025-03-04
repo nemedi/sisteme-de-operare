@@ -3,7 +3,7 @@
 # alocate dinamic de procesele care ruleaza un program
 # dat ca argument.
 # Alternativ, se poate rula comanda:
-# map $1 | tail -n +2 | head -n -1 | tr -s ' ' | grep "\[ anon \]$" | cut -d ' ' -f 2 | cut -d K -f 1 | tr '\n' '+' | sed 's/.$/\n/' | bc
+# pmap $1 | tail -n +2 | head -n -1 | tr -s ' ' | grep "\[ anon \]$" | cut -d ' ' -f 2 | cut -d K -f 1 | tr '\n' '+' | sed 's/.$/\n/' | bc
 
 
 if test "$#" -eq 1
