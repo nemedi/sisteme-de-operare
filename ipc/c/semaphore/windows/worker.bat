@@ -1,0 +1,1 @@
+.\worker.exe my_semaphore 1
