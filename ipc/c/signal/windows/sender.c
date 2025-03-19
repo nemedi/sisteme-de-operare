@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 int main() {
-    HANDLE hEvent = OpenEvent(EVENT_MODIFY_STATE, FALSE, L"MyEvent");
+    HANDLE hEvent = OpenEvent(EVENT_MODIFY_STATE, FALSE, "MyEvent");
     if (hEvent == NULL) {
         fprintf(stderr, "Error opening event (%d)\n", GetLastError());
         return 1;

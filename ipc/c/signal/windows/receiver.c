@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 int main() {
-    HANDLE hEvent = CreateEvent(NULL, FALSE, FALSE, L"MyEvent");
+    HANDLE hEvent = CreateEvent(NULL, FALSE, FALSE, "MyEvent");
     if (hEvent == NULL) {
         fprintf(stderr, "Error creating event (%d)\n", GetLastError());
         return 1;
