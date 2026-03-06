@@ -19,16 +19,16 @@ int main() {
         perror("Error opening message queue");
         exit(EXIT_FAILURE);
     }
-    printf("Enter text to write to the message queue (type 'exit' to quit):\n");
+    printf("Enter text to write to the message queue (type 'quit' to exit):\n");
     while (1) {
         char input[MAX_MSG_SIZE];
         fgets(input, sizeof(input), stdin);
         input[strcspn(input, "\n")] = '\0';
-        if (strcmp(input, "exit") == 0) {
-            break;
-        }
         if (mq_send(mq, input, strlen(input) + 1, 0) == -1) {
             perror("Error sending message to queue");
+            break;
+        }
+        if (strcmp(input, "quit") == 0) {
             break;
         }
     }

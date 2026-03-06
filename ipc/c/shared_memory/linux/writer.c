@@ -30,10 +30,10 @@ int main() {
         char input[256];
         fgets(input, sizeof(input), stdin);
         input[strcspn(input, "\n")] = '\0';
+        snprintf(shared_memory, size, "%s", input);
         if (strcmp(input, "quit") == 0) {
             break;
         }
-        snprintf(shared_memory, size, "%s", input);
     }
     munmap(shared_memory, size);
     close(shm_fd);

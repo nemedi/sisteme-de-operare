@@ -4,13 +4,13 @@
 #define WM_CUSTOM_MESSAGE (WM_USER + 1)
 
 LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
-    if (uMsg == WM_CUSTOM_MESSAGE) {
-        char* message = (char*)lParam;
+    if (uMsg == WM_COPYDATA) {
+        COPYDATASTRUCT* cds = (COPYDATASTRUCT*)lParam;
+        char* message = (char*)cds->lpData;
         printf("Received: %s\n", message);
         if (strcmp(message, "quit") == 0) {
             PostQuitMessage(0);
         }
-        return 0;
     }
     return DefWindowProc(hwnd, uMsg, wParam, lParam);
 }

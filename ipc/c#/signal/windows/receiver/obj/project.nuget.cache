@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "81UUn8PgkYfU9YGv9lp7pqKeWiCkaa0H0USCv6f/zsE4Bou2Ipyqo8k8v6dbLdUsYy1WjUockyShF9MB9XMY7Q==",
+  "dgSpecHash": "uQO65+AXdEU=",
   "success": true,
-  "projectFilePath": "D:\\Work\\ASE\\SO\\sisteme-de-operare\\ipc\\c#\\signal\\windows\\receiver\\Receiver.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Work\\Projects\\ASE\\SO\\sisteme-de-operare\\ipc\\c#\\signal\\windows\\receiver\\Receiver.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\iilie\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.24\\microsoft.netcore.app.ref.8.0.24.nupkg.sha512",
+    "C:\\Users\\iilie\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.24\\microsoft.windowsdesktop.app.ref.8.0.24.nupkg.sha512",
+    "C:\\Users\\iilie\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.24\\microsoft.aspnetcore.app.ref.8.0.24.nupkg.sha512",
+    "C:\\Users\\iilie\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\8.0.24\\microsoft.netcore.app.host.win-x64.8.0.24.nupkg.sha512"
+  ],
   "logs": []
 }

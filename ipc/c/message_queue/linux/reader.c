@@ -14,7 +14,7 @@ int main() {
         perror("Error opening message queue");
         exit(EXIT_FAILURE);
     }
-    printf("Reading from the message queue (type 'exit' to quit):\n");
+    printf("Reading from the message queue:\n");
     while (1) {
         char buffer[MAX_MSG_SIZE];
         ssize_t bytes_read = mq_receive(mq, buffer, MAX_MSG_SIZE, NULL);
@@ -23,7 +23,7 @@ int main() {
             break;
         }
         printf("Received: %s\n", buffer);
-        if (strcmp(buffer, "exit") == 0) {
+        if (strcmp(buffer, "quit") == 0) {
             break;
         }
     }
