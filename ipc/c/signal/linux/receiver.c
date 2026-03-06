@@ -11,6 +11,8 @@ void signalHandler(int signal) {
 }
 
 int main() {
+    pid_t pid = getpid();
+    printf("Current process PID: %d\n", pid);
     if (signal(SIGUSR1, signalHandler) == SIG_ERR) {
         perror("Error registering signal handler");
         return 1;
