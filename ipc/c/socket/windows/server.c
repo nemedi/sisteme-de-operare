@@ -42,6 +42,8 @@ int main() {
     if (bytesRead > 0) {
         buffer[bytesRead] = '\0';
         printf("Received data from client: %s\n", buffer);
+        const char* response = "pong";
+        send(clientSocket, response, strlen(response), 0);        
     }
     closesocket(clientSocket);
     closesocket(serverSocket);

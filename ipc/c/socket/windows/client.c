@@ -28,8 +28,18 @@ int main() {
         return 1;
     }
     printf("Connected to server\n");
-    const char* dataToSend = "Hello, server!";
+    const char* dataToSend = "ping";
     send(clientSocket, dataToSend, strlen(dataToSend), 0);
+    char buffer[1024];
+    int bytesReceived = recv(clientSocket, buffer, sizeof(buffer) - 1, 0);
+    if (bytesReceived > 0) {
+        buffer[bytesReceived] = '\0';
+        printf("Received from server: %s\n", buffer);
+    } else if (bytesReceived == 0) {
+        printf("Server closed the connection\n");
+    } else {
+        printf("recv failed (%d)\n", WSAGetLastError());
+    }
     closesocket(clientSocket);
     WSACleanup();
     return 0;
