@@ -1,4 +1,5 @@
 ﻿using System.Runtime.InteropServices;
+using System.Diagnostics;
 
 class Program
 {
@@ -8,6 +9,8 @@ class Program
     private const int SIGINT = 2; // Ctrl+C interrupt signal
     static void Main()
     {
+        int pid = Process.GetCurrentProcess().Id;
+        Console.WriteLine("Current Process ID: " + pid);
         SignalHandlerDelegate handler = new SignalHandlerDelegate(SignalHandler);
         IntPtr result = Signal(SIGINT, handler);
         if (result == IntPtr.Zero)

@@ -1,0 +1,15 @@
+C:\Work\Projects\ASE\SO\sisteme-de-operare\ipc\c#\signal\linux\receiver\bin\Debug\net8.0\receiver.exe
+C:\Work\Projects\ASE\SO\sisteme-de-operare\ipc\c#\signal\linux\receiver\bin\Debug\net8.0\receiver.deps.json
+C:\Work\Projects\ASE\SO\sisteme-de-operare\ipc\c#\signal\linux\receiver\bin\Debug\net8.0\receiver.runtimeconfig.json
+C:\Work\Projects\ASE\SO\sisteme-de-operare\ipc\c#\signal\linux\receiver\bin\Debug\net8.0\receiver.dll
+C:\Work\Projects\ASE\SO\sisteme-de-operare\ipc\c#\signal\linux\receiver\bin\Debug\net8.0\receiver.pdb
+C:\Work\Projects\ASE\SO\sisteme-de-operare\ipc\c#\signal\linux\receiver\obj\Debug\net8.0\Receiver.GeneratedMSBuildEditorConfig.editorconfig
+C:\Work\Projects\ASE\SO\sisteme-de-operare\ipc\c#\signal\linux\receiver\obj\Debug\net8.0\Receiver.AssemblyInfoInputs.cache
+C:\Work\Projects\ASE\SO\sisteme-de-operare\ipc\c#\signal\linux\receiver\obj\Debug\net8.0\Receiver.AssemblyInfo.cs
+C:\Work\Projects\ASE\SO\sisteme-de-operare\ipc\c#\signal\linux\receiver\obj\Debug\net8.0\Receiver.csproj.CoreCompileInputs.cache
+C:\Work\Projects\ASE\SO\sisteme-de-operare\ipc\c#\signal\linux\receiver\obj\Debug\net8.0\Receiver.sourcelink.json
+C:\Work\Projects\ASE\SO\sisteme-de-operare\ipc\c#\signal\linux\receiver\obj\Debug\net8.0\receiver.dll
+C:\Work\Projects\ASE\SO\sisteme-de-operare\ipc\c#\signal\linux\receiver\obj\Debug\net8.0\refint\receiver.dll
+C:\Work\Projects\ASE\SO\sisteme-de-operare\ipc\c#\signal\linux\receiver\obj\Debug\net8.0\receiver.pdb
+C:\Work\Projects\ASE\SO\sisteme-de-operare\ipc\c#\signal\linux\receiver\obj\Debug\net8.0\Receiver.genruntimeconfig.cache
+C:\Work\Projects\ASE\SO\sisteme-de-operare\ipc\c#\signal\linux\receiver\obj\Debug\net8.0\ref\receiver.dll
