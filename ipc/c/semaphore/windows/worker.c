@@ -7,7 +7,7 @@ int main(int argc, char* argv[]) {
     if (argc == 3)
     {
         HANDLE semaphore;
-        semaphore = CreateSemaphore(NULL, 1, 1, "MyNamedSemaphore");
+        semaphore = CreateSemaphore(NULL, 1, 1, argv[1]);
         if (semaphore == NULL) {
             fprintf(stderr, "Semaphore creation failed (%d)\n", GetLastError());
             return 1;
