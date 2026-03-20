@@ -40,7 +40,7 @@ public class Server implements AutoCloseable {
 									String message = reader.readLine();
 									if ("exit".equals(message)) {
 										socket.close();
-									} else {
+									} else if (message != null) {
 										writers.forEach(w -> {
 											w.print(message + "\r\n");
 											w.flush();
