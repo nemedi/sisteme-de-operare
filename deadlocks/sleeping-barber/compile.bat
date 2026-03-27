@@ -1,0 +1,1 @@
+javac.exe .\src\*.java -d .\bin
