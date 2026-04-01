@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "s7xkUd/kQGSid590Ysya4141FKAFwaQeDxp4o84iSABxjDgP0W+5SFc8bejWQG3vMAnec+GsX+k90vkdSdnXrA==",
+  "dgSpecHash": "H1HQbmaCOaw=",
   "success": true,
-  "projectFilePath": "D:\\Work\\ASE\\SO\\sisteme-de-operare\\threads\\c#\\thread_pool\\thread_pool.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Work\\Projects\\ASE\\SO\\sisteme-de-operare\\threads\\c#\\thread_pool\\thread_pool.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\iilie\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.25\\microsoft.netcore.app.ref.8.0.25.nupkg.sha512",
+    "C:\\Users\\iilie\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.25\\microsoft.windowsdesktop.app.ref.8.0.25.nupkg.sha512",
+    "C:\\Users\\iilie\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.25\\microsoft.aspnetcore.app.ref.8.0.25.nupkg.sha512",
+    "C:\\Users\\iilie\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\8.0.25\\microsoft.netcore.app.host.win-x64.8.0.25.nupkg.sha512"
+  ],
   "logs": []
 }

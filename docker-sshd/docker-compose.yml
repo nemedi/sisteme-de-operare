@@ -1,0 +1,7 @@
+services:
+  ssh-server:
+    build: .
+    container_name: ssh-server
+    ports:
+      - "2222:22"
+    restart: unless-stopped
