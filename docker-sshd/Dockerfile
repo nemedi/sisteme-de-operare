@@ -12,5 +12,6 @@ COPY users.txt /usr/local/setup
 RUN chmod +x /usr/local/setup/create-users.sh
 RUN sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config && \
     sed -i 's/#PasswordAuthentication yes/PasswordAuthentication yes/' /etc/ssh/sshd_config
+VOLUME ["/usr/local/share"]
 EXPOSE 22
 ENTRYPOINT ["/usr/sbin/sshd", "-D"]

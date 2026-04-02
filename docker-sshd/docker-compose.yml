@@ -4,4 +4,6 @@ services:
     container_name: ssh-server
     ports:
       - "2222:22"
+    volumes:
+    - ./share:/usr/local/share
     restart: unless-stopped
