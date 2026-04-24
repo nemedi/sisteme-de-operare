@@ -1,4 +1,3 @@
-version: "3"
 services:
   prime_number_client:
     container_name: prime_number_client
