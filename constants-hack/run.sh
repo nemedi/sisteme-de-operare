@@ -1,1 +1,1 @@
-java -cp ./bin Program
+java -cp ./bin --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/jdk.internal.misc=ALL-UNNAMED Program

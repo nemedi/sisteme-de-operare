@@ -1,1 +1,1 @@
-"C:\Program Files\Zulu\zulu-11\bin\java.exe" -cp .\bin Program
+java.exe -cp .\bin --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/jdk.internal.misc=ALL-UNNAMED Program
