@@ -1,0 +1,1 @@
+javac.exe .\src\FileExplorerFrame.java -d .\bin

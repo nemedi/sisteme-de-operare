@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "jIb6NsmNygj8tTC8h3OcJZrqFA21Ht/9JcOfV+d+boSt5CTWICtCoMVLpRrVdb/4goofDmG91pDOvTGmlURvYA==",
+  "success": true,
+  "projectFilePath": "/home/iulian/Projects/ASE/SO/sisteme-de-operare-main/GUI/GTK#/FileExplorer/FileExplorer.csproj",
+  "expectedPackageFiles": [
+    "/home/iulian/.nuget/packages/atksharp/3.24.24.95/atksharp.3.24.24.95.nupkg.sha512",
+    "/home/iulian/.nuget/packages/cairosharp/3.24.24.95/cairosharp.3.24.24.95.nupkg.sha512",
+    "/home/iulian/.nuget/packages/gdksharp/3.24.24.95/gdksharp.3.24.24.95.nupkg.sha512",
+    "/home/iulian/.nuget/packages/giosharp/3.24.24.95/giosharp.3.24.24.95.nupkg.sha512",
+    "/home/iulian/.nuget/packages/glibsharp/3.24.24.95/glibsharp.3.24.24.95.nupkg.sha512",
+    "/home/iulian/.nuget/packages/gtksharp/3.24.24.95/gtksharp.3.24.24.95.nupkg.sha512",
+    "/home/iulian/.nuget/packages/pangosharp/3.24.24.95/pangosharp.3.24.24.95.nupkg.sha512"
+  ],
+  "logs": []
+}

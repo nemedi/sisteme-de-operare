@@ -1,0 +1,5 @@
+/home/iulian/Projects/ASE/SO/GUI/c++/FileExplorer/build/CMakeFiles/FileExplorer.dir
+/home/iulian/Projects/ASE/SO/GUI/c++/FileExplorer/build/CMakeFiles/edit_cache.dir
+/home/iulian/Projects/ASE/SO/GUI/c++/FileExplorer/build/CMakeFiles/rebuild_cache.dir
+/home/iulian/Projects/ASE/SO/GUI/c++/FileExplorer/build/CMakeFiles/FileExplorer_autogen_timestamp_deps.dir
+/home/iulian/Projects/ASE/SO/GUI/c++/FileExplorer/build/CMakeFiles/FileExplorer_autogen.dir

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="/home/iulian/Applications/eclipse/plugins/com.ibm.icu_78.1.0.jar" sourcepath="/home/iulian/Applications/eclipse/plugins/com.ibm.icu_78.1.0.jar"/>
+	<classpathentry kind="lib" path="/home/iulian/Applications/eclipse/plugins/jakarta.annotation-api_2.1.1.jar" sourcepath="/home/iulian/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1-sources.jar"/>
+	<classpathentry kind="lib" path="/home/iulian/Applications/eclipse/plugins/org.eclipse.core.commands_3.12.500.v20251103-0733.jar" sourcepath="/home/iulian/Applications/eclipse/plugins/org.eclipse.core.commands_3.12.500.v20251103-0733.jar"/>
+	<classpathentry kind="lib" path="/home/iulian/Applications/eclipse/plugins/org.eclipse.core.runtime_3.34.100.v20251111-1421.jar" sourcepath="/home/iulian/Applications/eclipse/plugins/org.eclipse.core.runtime_3.34.100.v20251111-1421.jar"/>
+	<classpathentry kind="lib" path="/home/iulian/Applications/eclipse/plugins/org.eclipse.e4.ui.di_1.5.700.v20250917-0901.jar" sourcepath="/home/iulian/Applications/eclipse/plugins/org.eclipse.e4.ui.di_1.5.700.v20250917-0901.jar"/>
+	<classpathentry kind="lib" path="/home/iulian/Applications/eclipse/plugins/org.eclipse.equinox.common_3.20.300.v20251111-0312.jar" sourcepath="/home/iulian/Applications/eclipse/plugins/org.eclipse.equinox.common_3.20.300.v20251111-0312.jar"/>
+	<classpathentry kind="lib" path="/home/iulian/Applications/eclipse/plugins/org.eclipse.equinox.registry_3.12.600.v20250906-0651.jar" sourcepath="/home/iulian/Applications/eclipse/plugins/org.eclipse.equinox.registry_3.12.600.v20250906-0651.jar"/>
+	<classpathentry kind="lib" path="/home/iulian/Applications/eclipse/plugins/org.eclipse.jface_3.38.100.v20251108-1551.jar" sourcepath="/home/iulian/Applications/eclipse/plugins/org.eclipse.jface_3.38.100.v20251108-1551.jar"/>
+	<classpathentry kind="lib" path="/home/iulian/Applications/eclipse/plugins/org.eclipse.jface.text_3.29.0.v20251112-0859.jar" sourcepath="/home/iulian/Applications/eclipse/plugins/org.eclipse.jface.text_3.29.0.v20251112-0859.jar"/>
+	<classpathentry kind="lib" path="/home/iulian/Applications/eclipse/plugins/org.eclipse.osgi_3.24.0.v20251126-0427.jar" sourcepath="/home/iulian/Applications/eclipse/plugins/org.eclipse.osgi_3.24.0.v20251126-0427.jar"/>
+	<classpathentry kind="lib" path="/home/iulian/Applications/eclipse/plugins/org.eclipse.swt.gtk.linux.x86_64_3.132.0.v20251124-0642.jar" sourcepath="/home/iulian/Applications/eclipse/plugins/org.eclipse.swt.gtk.linux.x86_64_3.132.0.v20251124-0642.jar"/>
+	<classpathentry kind="lib" path="/home/iulian/Applications/eclipse/plugins/org.eclipse.text_3.14.500.v20251103-0730.jar" sourcepath="/home/iulian/Applications/eclipse/plugins/org.eclipse.text_3.14.500.v20251103-0730.jar"/>
+	<classpathentry kind="lib" path="/home/iulian/Applications/eclipse/plugins/org.eclipse.ui.forms_3.13.700.v20251009-1850.jar" sourcepath="/home/iulian/Applications/eclipse/plugins/org.eclipse.ui.forms_3.13.700.v20251009-1850.jar"/>
+	<classpathentry kind="lib" path="/home/iulian/Applications/eclipse/plugins/org.eclipse.ui.workbench_3.137.0.v20251114-0005.jar" sourcepath="/home/iulian/Applications/eclipse/plugins/org.eclipse.ui.workbench_3.137.0.v20251114-0005.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,1 +1,0 @@
-javac.exe .\src\MainFrame.java -d .\bin

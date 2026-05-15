@@ -1,0 +1,1 @@
+javac ./src/FileExplorerFrame.java -d ./bin

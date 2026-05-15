@@ -1,1 +1,0 @@
-javac ./src/MainFrame.java -d ./bin
